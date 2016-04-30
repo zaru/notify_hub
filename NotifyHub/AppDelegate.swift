@@ -9,17 +9,30 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
+        let notification = NSUserNotification()
+        notification.title = "タイトル"
+        notification.subtitle = "サブタイトル1"
+        notification.informativeText = "test"
+        notification.contentImage =  NSImage(named: "icon_256")
+        notification.userInfo = ["title" : "タイトル"]
+        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        
+    }
+    func userNotificationCenter(center: NSUserNotificationCenter, didActivateNotification notification: NSUserNotification) {
+        let info = notification.userInfo as! [String:String]
+        
+        print(info["title"]!)
     }
 
 
