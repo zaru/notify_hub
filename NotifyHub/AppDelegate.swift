@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let querys = url!.query!.componentsSeparatedByString("=")
         print(querys[1])
     }
-
+    
 
 }
 

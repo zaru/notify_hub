@@ -9,20 +9,21 @@
 /* Begin PBXBuildFile section */
 		453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204501CD4EBDD0099F445 /* AppDelegate.swift */; };
 		453204531CD4EBDD0099F445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453204521CD4EBDD0099F445 /* Assets.xcassets */; };
-		453204561CD4EBDD0099F445 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453204541CD4EBDD0099F445 /* MainMenu.xib */; };
 		4532045F1CD4F61B0099F445 /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 4532045E1CD4F61B0099F445 /* icon_256.png */; };
 		453204641CD4F6C30099F445 /* icon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 453204601CD4F6C30099F445 /* icon_64.png */; };
 		453204651CD4F6C30099F445 /* icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 453204611CD4F6C30099F445 /* icon_128.png */; };
 		453204661CD4F6C30099F445 /* icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 453204621CD4F6C30099F445 /* icon_512.png */; };
 		453204671CD4F6C30099F445 /* icon_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453204631CD4F6C30099F445 /* icon_1024.png */; };
 		453204691CD4F7080099F445 /* icon_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 453204681CD4F7080099F445 /* icon_32.png */; };
+		453204881CD50A180099F445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453204871CD50A180099F445 /* Main.storyboard */; };
+		4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204891CD50A3A0099F445 /* ViewController.swift */; };
+		4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4532048B1CD50C830099F445 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4532044D1CD4EBDD0099F445 /* NotifyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotifyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453204501CD4EBDD0099F445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453204521CD4EBDD0099F445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		453204551CD4EBDD0099F445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		453204571CD4EBDD0099F445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4532045E1CD4F61B0099F445 /* icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256.png; sourceTree = "<group>"; };
 		453204601CD4F6C30099F445 /* icon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_64.png; sourceTree = "<group>"; };
@@ -30,6 +31,9 @@
 		453204621CD4F6C30099F445 /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512.png; sourceTree = "<group>"; };
 		453204631CD4F6C30099F445 /* icon_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_1024.png; sourceTree = "<group>"; };
 		453204681CD4F7080099F445 /* icon_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_32.png; sourceTree = "<group>"; };
+		453204871CD50A180099F445 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		453204891CD50A3A0099F445 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4532048B1CD50C830099F445 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,7 @@
 		453204441CD4EBDD0099F445 = {
 			isa = PBXGroup;
 			children = (
+				4532048B1CD50C830099F445 /* WebKit.framework */,
 				4532044F1CD4EBDD0099F445 /* NotifyHub */,
 				4532044E1CD4EBDD0099F445 /* Products */,
 			);
@@ -62,10 +68,11 @@
 		4532044F1CD4EBDD0099F445 /* NotifyHub */ = {
 			isa = PBXGroup;
 			children = (
+				453204871CD50A180099F445 /* Main.storyboard */,
 				4532045D1CD4F6010099F445 /* images */,
 				453204501CD4EBDD0099F445 /* AppDelegate.swift */,
+				453204891CD50A3A0099F445 /* ViewController.swift */,
 				453204521CD4EBDD0099F445 /* Assets.xcassets */,
-				453204541CD4EBDD0099F445 /* MainMenu.xib */,
 				453204571CD4EBDD0099F445 /* Info.plist */,
 			);
 			path = NotifyHub;
@@ -148,8 +155,8 @@
 				453204691CD4F7080099F445 /* icon_32.png in Resources */,
 				453204651CD4F6C30099F445 /* icon_128.png in Resources */,
 				453204531CD4EBDD0099F445 /* Assets.xcassets in Resources */,
+				453204881CD50A180099F445 /* Main.storyboard in Resources */,
 				4532045F1CD4F61B0099F445 /* icon_256.png in Resources */,
-				453204561CD4EBDD0099F445 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,22 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */,
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		453204541CD4EBDD0099F445 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				453204551CD4EBDD0099F445 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		453204581CD4EBDD0099F445 /* Debug */ = {
