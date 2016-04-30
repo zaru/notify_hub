@@ -25,9 +25,13 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>icon_1024</string>
+			<key>CFBundleURLName</key>
+			<string>org.tofu-kun.notifyhub</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>notify_hub</string>
+				<string>notifyhub</string>
 			</array>
 		</dict>
 	</array>

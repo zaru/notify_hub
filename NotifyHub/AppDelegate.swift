@@ -23,6 +23,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         notification.contentImage =  NSImage(named: "icon_256")
         notification.userInfo = ["title" : "タイトル"]
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+        
+        var appleEventManager:NSAppleEventManager = NSAppleEventManager.sharedAppleEventManager()
+        appleEventManager.setEventHandler(self, andSelector: "handleGetURLEvent:replyEvent:", forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+        var appUrl = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("", isDirectory: true)
+        var a:Bool = true
+        var status = LSRegisterURL(appUrl as CFURL!, a)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -33,6 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let info = notification.userInfo as! [String:String]
         
         print(info["title"]!)
+    }
+    func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {
+        print("yay");
     }
 
 
