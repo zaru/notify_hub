@@ -24,24 +24,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         notification.userInfo = ["title" : "タイトル"]
         NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
         
-        var appleEventManager:NSAppleEventManager = NSAppleEventManager.sharedAppleEventManager()
+        let appleEventManager:NSAppleEventManager = NSAppleEventManager.sharedAppleEventManager()
         appleEventManager.setEventHandler(self, andSelector: "handleGetURLEvent:replyEvent:", forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
-        var appUrl = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("", isDirectory: true)
-        var a:Bool = true
-        var status = LSRegisterURL(appUrl as CFURL!, a)
+        let appUrl = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("", isDirectory: true)
+        let a:Bool = true
+        _ = LSRegisterURL(appUrl as CFURL!, a)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
         
     }
+    
     func userNotificationCenter(center: NSUserNotificationCenter, didActivateNotification notification: NSUserNotification) {
         let info = notification.userInfo as! [String:String]
         
         print(info["title"]!)
     }
+    
     func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {
-        print("yay");
+        let url = NSURL(string: event!.paramDescriptorForKeyword(AEKeyword(keyDirectObject))!.stringValue!)
+        let querys = url!.query!.componentsSeparatedByString("=")
+        print(querys[1])
     }
 
 
