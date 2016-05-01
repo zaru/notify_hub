@@ -17,8 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
-        let keys = NotifyhubKeys()
-        
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notification = NSUserNotification()
         notification.title = "タイトル"
@@ -50,6 +48,40 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let url = NSURL(string: event!.paramDescriptorForKeyword(AEKeyword(keyDirectObject))!.stringValue!)
         let querys = url!.query!.componentsSeparatedByString("=")
         print(querys[1])
+        fetchAccessToken(querys[1])
+    }
+    
+    func fetchAccessToken(code: String) {
+        let keys = NotifyhubKeys()
+        
+        let url: NSURL = NSURL(string: "https://github.com/login/oauth/access_token")!
+        let body: NSMutableDictionary = NSMutableDictionary()
+        body.setValue(keys.gitHubClientId(), forKey: "client_id")
+        body.setValue(keys.gitHubClientSecret(), forKey: "client_secret")
+        body.setValue(code, forKey: "code")
+        
+        post(url, body: body, completionHandler: { data, response, error in
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print(responseString)
+        })
+    }
+    
+    let session: NSURLSession = NSURLSession.sharedSession()
+    
+    func post(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
+        } catch {
+            // Error Handling
+            print("NSJSONSerialization Error")
+            return
+        }
+        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
     }
     
 
