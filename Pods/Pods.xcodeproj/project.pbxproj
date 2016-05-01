@@ -6,43 +6,305 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		00178942C59F40656FDE35E80FACC58D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13013764C9A29E0723A471E34EDDBE2A /* Cocoa.framework */; };
+		0EFF112EA759340619359157DCEBFCFA /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDEF2D781254378583647E75F3AC6790 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1792ACA02A7C3C774AD2E4FE61E6EC2A /* Pods-NotifyHub-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8ED8453DD930A16CE72958BE4B3C5 /* Pods-NotifyHub-dummy.m */; };
+		1B4FE42D161786164E365CBFF5C5CFD0 /* Keys-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3362ECAEB183088581A7A8B658ABEA /* Keys-dummy.m */; };
+		23AAF263F948141C97F4D4BAC0CA948D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13013764C9A29E0723A471E34EDDBE2A /* Cocoa.framework */; };
+		337FAF70C979A07BA798CC90BF1056CB /* NotifyhubKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0E5F20FCDC75C1464E7738FEC3661 /* NotifyhubKeys.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6739650C9119D7ACA97B25C1632FBA54 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13013764C9A29E0723A471E34EDDBE2A /* Cocoa.framework */; };
+		7AC3BF675E0793E5549F03C6BF06DE77 /* Pods-NotifyHub-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31D6A7553DB6329CF67E04E3BE3270CF /* Pods-NotifyHub-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AF9D9CC8ACFDFFC74267237E05313BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38259A4F1802719F518A96F324DB7450 /* Foundation.framework */; };
+		7FE0801EB5ED8CDDB0689E54C75BBC33 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F87A5BEA74EE99BF5AAFDACDDE49BD4C /* Pods-dummy.m */; };
+		DE29A0657DA79826B233E7DBE02E0129 /* NotifyhubKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 0193B74FF65E18788C8FC51FE61F0E8B /* NotifyhubKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E06614FCAA29C0B5DA47756505F7C6B7 /* Keys-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71978E5898DED1FB7E67629C23700CCC /* Keys-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8433F85F5B269B4EB0320567B505E144 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47FA0C16A61322522FE124B7EFF2E121;
+			remoteInfo = Keys;
+		};
+		C86326C684A6CEFE7731CD91DD3AD820 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47FA0C16A61322522FE124B7EFF2E121;
+			remoteInfo = Keys;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0193B74FF65E18788C8FC51FE61F0E8B /* NotifyhubKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NotifyhubKeys.h; sourceTree = "<group>"; };
+		0D568ECEAF8216574BF0AAC47FB712E4 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		13013764C9A29E0723A471E34EDDBE2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		1D3362ECAEB183088581A7A8B658ABEA /* Keys-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keys-dummy.m"; sourceTree = "<group>"; };
+		206C3749630CA6BED722AF6158C84899 /* Keys.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Keys.modulemap; sourceTree = "<group>"; };
+		2A29D0F0D351224E787126B0B031F3FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E3F00D6AFFA602DF9BD4D346F430383 /* Keys-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-prefix.pch"; sourceTree = "<group>"; };
+		31D6A7553DB6329CF67E04E3BE3270CF /* Pods-NotifyHub-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifyHub-umbrella.h"; sourceTree = "<group>"; };
+		38259A4F1802719F518A96F324DB7450 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3C40F151D0DA6B1D6D36E99760AF88EB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F2B8883E5AE2E8C8B1A4C91A773E681 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		4C1F7320DC776C94BD34DD590C624B59 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		4F71359880585F7F6E4216A3879E1E0B /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59F7225272CE649334DAC86EDB0FB932 /* Pods-NotifyHub.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NotifyHub.modulemap"; sourceTree = "<group>"; };
+		71978E5898DED1FB7E67629C23700CCC /* Keys-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-umbrella.h"; sourceTree = "<group>"; };
+		75150733A788D05412D048194B43BD01 /* Pods-NotifyHub-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NotifyHub-frameworks.sh"; sourceTree = "<group>"; };
+		80AB5BC32913B8E52C56E1C5908A9864 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8251BB010B044461047D5EA4A337AFF6 /* Pods-NotifyHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifyHub.release.xcconfig"; sourceTree = "<group>"; };
+		8255507A19A3432C644BA96B3820D80D /* Pods_NotifyHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotifyHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F8ED8453DD930A16CE72958BE4B3C5 /* Pods-NotifyHub-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifyHub-dummy.m"; sourceTree = "<group>"; };
+		9DA0E5F20FCDC75C1464E7738FEC3661 /* NotifyhubKeys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NotifyhubKeys.m; sourceTree = "<group>"; };
+		B36FA8B3CE2F8501784524AF15BA1B76 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C59D99CC7877BDC3EE8F591FBBDFB483 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6020682E8155D3B4C3401EF78103406 /* Pods-NotifyHub-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NotifyHub-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CC9EB04AD9B44444338C772A5F29C2D1 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		CDEF2D781254378583647E75F3AC6790 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		DA3DB35825C283C926886A3642713571 /* Pods-NotifyHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifyHub.debug.xcconfig"; sourceTree = "<group>"; };
+		EB06CC51B209A4BB2FB01EC9D9D1D612 /* Pods-NotifyHub-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NotifyHub-resources.sh"; sourceTree = "<group>"; };
+		F87A5BEA74EE99BF5AAFDACDDE49BD4C /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		F9F93C95EFC8EC658FD7D1111D798969 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0B2E766439E8014F0833324AD10864 /* Keys.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		FDE11994F1016D711689404B2DAAC37A /* Pods-NotifyHub-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NotifyHub-acknowledgements.plist"; sourceTree = "<group>"; };
+		FF5A3DFDC7DCBF3A2DCA8F91C17BD9A6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		9BD0791EACF4185B034F565348099D46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6739650C9119D7ACA97B25C1632FBA54 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E96225E8D67B5FEE23082E50FAAFB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23AAF263F948141C97F4D4BAC0CA948D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6343DCE6462657E59E77A6C0A0075F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00178942C59F40656FDE35E80FACC58D /* Cocoa.framework in Frameworks */,
+				7AF9D9CC8ACFDFFC74267237E05313BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-		09C5E90726D2521A760312DBF50D9358 /* Products */ = {
+		030399288BE749194910EF3FC9659BDE /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				2059C7521DA92CD8391740233AA068FB /* Keys */,
 			);
-			name = Products;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+		19F70AD3996DD831231F71E02AFF3150 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				2A29D0F0D351224E787126B0B031F3FA /* Info.plist */,
+				3F2B8883E5AE2E8C8B1A4C91A773E681 /* Pods.modulemap */,
+				80AB5BC32913B8E52C56E1C5908A9864 /* Pods-acknowledgements.markdown */,
+				B36FA8B3CE2F8501784524AF15BA1B76 /* Pods-acknowledgements.plist */,
+				F87A5BEA74EE99BF5AAFDACDDE49BD4C /* Pods-dummy.m */,
+				CC9EB04AD9B44444338C772A5F29C2D1 /* Pods-frameworks.sh */,
+				0D568ECEAF8216574BF0AAC47FB712E4 /* Pods-resources.sh */,
+				CDEF2D781254378583647E75F3AC6790 /* Pods-umbrella.h */,
+				FF5A3DFDC7DCBF3A2DCA8F91C17BD9A6 /* Pods.debug.xcconfig */,
+				4C1F7320DC776C94BD34DD590C624B59 /* Pods.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		1A6EDA133EEC5E74AA68FE81F4842AAF /* Pods-NotifyHub */ = {
+			isa = PBXGroup;
+			children = (
+				C59D99CC7877BDC3EE8F591FBBDFB483 /* Info.plist */,
+				59F7225272CE649334DAC86EDB0FB932 /* Pods-NotifyHub.modulemap */,
+				C6020682E8155D3B4C3401EF78103406 /* Pods-NotifyHub-acknowledgements.markdown */,
+				FDE11994F1016D711689404B2DAAC37A /* Pods-NotifyHub-acknowledgements.plist */,
+				83F8ED8453DD930A16CE72958BE4B3C5 /* Pods-NotifyHub-dummy.m */,
+				75150733A788D05412D048194B43BD01 /* Pods-NotifyHub-frameworks.sh */,
+				EB06CC51B209A4BB2FB01EC9D9D1D612 /* Pods-NotifyHub-resources.sh */,
+				31D6A7553DB6329CF67E04E3BE3270CF /* Pods-NotifyHub-umbrella.h */,
+				DA3DB35825C283C926886A3642713571 /* Pods-NotifyHub.debug.xcconfig */,
+				8251BB010B044461047D5EA4A337AFF6 /* Pods-NotifyHub.release.xcconfig */,
+			);
+			name = "Pods-NotifyHub";
+			path = "Target Support Files/Pods-NotifyHub";
+			sourceTree = "<group>";
+		};
+		2059C7521DA92CD8391740233AA068FB /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				0193B74FF65E18788C8FC51FE61F0E8B /* NotifyhubKeys.h */,
+				9DA0E5F20FCDC75C1464E7738FEC3661 /* NotifyhubKeys.m */,
+				5CDE62F46083516944092EC14A8BD48E /* Support Files */,
+			);
+			name = Keys;
+			path = CocoaPodsKeys;
+			sourceTree = "<group>";
+		};
+		5CDE62F46083516944092EC14A8BD48E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C40F151D0DA6B1D6D36E99760AF88EB /* Info.plist */,
+				206C3749630CA6BED722AF6158C84899 /* Keys.modulemap */,
+				FA0B2E766439E8014F0833324AD10864 /* Keys.xcconfig */,
+				1D3362ECAEB183088581A7A8B658ABEA /* Keys-dummy.m */,
+				2E3F00D6AFFA602DF9BD4D346F430383 /* Keys-prefix.pch */,
+				71978E5898DED1FB7E67629C23700CCC /* Keys-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Keys";
+			sourceTree = "<group>";
+		};
+		781E7E6DDA8202CCBB02A410255AB3C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F71359880585F7F6E4216A3879E1E0B /* Keys.framework */,
+				F9F93C95EFC8EC658FD7D1111D798969 /* Pods.framework */,
+				8255507A19A3432C644BA96B3820D80D /* Pods_NotifyHub.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
-				09C5E90726D2521A760312DBF50D9358 /* Products */,
-				F6CCA5D896907CE7506C37FD31FC265A /* Targets Support Files */,
+				030399288BE749194910EF3FC9659BDE /* Development Pods */,
+				D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */,
+				781E7E6DDA8202CCBB02A410255AB3C3 /* Products */,
+				D5E6E2D7A215F3E2E4C1304B9905E6A4 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		F6CCA5D896907CE7506C37FD31FC265A /* Targets Support Files */ = {
+		D3231B1AB8A6FE7C4A23148088E06A4E /* OS X */ = {
 			isa = PBXGroup;
 			children = (
+				13013764C9A29E0723A471E34EDDBE2A /* Cocoa.framework */,
+				38259A4F1802719F518A96F324DB7450 /* Foundation.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		D5E6E2D7A215F3E2E4C1304B9905E6A4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				19F70AD3996DD831231F71E02AFF3150 /* Pods */,
+				1A6EDA133EEC5E74AA68FE81F4842AAF /* Pods-NotifyHub */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3231B1AB8A6FE7C4A23148088E06A4E /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2542ABE628626388D6732E9298F94788 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AC3BF675E0793E5549F03C6BF06DE77 /* Pods-NotifyHub-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		751BF6FB5105A41DD25A839DDD44C19E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E06614FCAA29C0B5DA47756505F7C6B7 /* Keys-umbrella.h in Headers */,
+				DE29A0657DA79826B233E7DBE02E0129 /* NotifyhubKeys.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5C75DAEECC63AC44CFA4278B26B1801 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EFF112EA759340619359157DCEBFCFA /* Pods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		47FA0C16A61322522FE124B7EFF2E121 /* Keys */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FA4D8F8E83CB743635E8EF6E9461D79 /* Build configuration list for PBXNativeTarget "Keys" */;
+			buildPhases = (
+				40B2FE281DFA3AD6DF0C75E58739ED3F /* Sources */,
+				C6343DCE6462657E59E77A6C0A0075F0 /* Frameworks */,
+				751BF6FB5105A41DD25A839DDD44C19E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keys;
+			productName = Keys;
+			productReference = 4F71359880585F7F6E4216A3879E1E0B /* Keys.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8D84C45177FA5F0408F68A0AD7A747ED /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F83FA9F6CE1584D3B3BD70CAF22C2038 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				3D0F53F67BED69D8775FE5097AFDE3FD /* Sources */,
+				B9E96225E8D67B5FEE23082E50FAAFB4 /* Frameworks */,
+				C5C75DAEECC63AC44CFA4278B26B1801 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D408B5EBDBA3D789E545F2A0235BE227 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = F9F93C95EFC8EC658FD7D1111D798969 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CFE8E28CA37192769DA6BD5EBEE4B373 /* Pods-NotifyHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 217BC6E7F83524691634AEB98A308AEC /* Build configuration list for PBXNativeTarget "Pods-NotifyHub" */;
+			buildPhases = (
+				40E40AB0CF0E228BA6111210F7B6B57C /* Sources */,
+				9BD0791EACF4185B034F565348099D46 /* Frameworks */,
+				2542ABE628626388D6732E9298F94788 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C35CDACEC76DB0572BA4CA1AA7A0EB2B /* PBXTargetDependency */,
+			);
+			name = "Pods-NotifyHub";
+			productName = "Pods-NotifyHub";
+			productReference = 8255507A19A3432C644BA96B3820D80D /* Pods_NotifyHub.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
@@ -59,13 +321,59 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 09C5E90726D2521A760312DBF50D9358 /* Products */;
+			productRefGroup = 781E7E6DDA8202CCBB02A410255AB3C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				47FA0C16A61322522FE124B7EFF2E121 /* Keys */,
+				8D84C45177FA5F0408F68A0AD7A747ED /* Pods */,
+				CFE8E28CA37192769DA6BD5EBEE4B373 /* Pods-NotifyHub */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D0F53F67BED69D8775FE5097AFDE3FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE0801EB5ED8CDDB0689E54C75BBC33 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40B2FE281DFA3AD6DF0C75E58739ED3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE42D161786164E365CBFF5C5CFD0 /* Keys-dummy.m in Sources */,
+				337FAF70C979A07BA798CC90BF1056CB /* NotifyhubKeys.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40E40AB0CF0E228BA6111210F7B6B57C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1792ACA02A7C3C774AD2E4FE61E6EC2A /* Pods-NotifyHub-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C35CDACEC76DB0572BA4CA1AA7A0EB2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Keys;
+			target = 47FA0C16A61322522FE124B7EFF2E121 /* Keys */;
+			targetProxy = 8433F85F5B269B4EB0320567B505E144 /* PBXContainerItemProxy */;
+		};
+		D408B5EBDBA3D789E545F2A0235BE227 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Keys;
+			target = 47FA0C16A61322522FE124B7EFF2E121 /* Keys */;
+			targetProxy = C86326C684A6CEFE7731CD91DD3AD820 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1E621D6BF749EDCE77ACBE7C6D464E29 /* Debug */ = {
@@ -107,6 +415,36 @@
 			};
 			name = Debug;
 		};
+		49F4A0C2453B1D263D572B5AB364836A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA3DB35825C283C926886A3642713571 /* Pods-NotifyHub.debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-NotifyHub/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods-NotifyHub/Pods-NotifyHub.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_NotifyHub;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		5577A3F22A37686E40DB6863D68D476C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -141,14 +479,188 @@
 			};
 			name = Release;
 		};
+		682C3BE923C5EF2027AF6AF101BB0603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C1F7320DC776C94BD34DD590C624B59 /* Pods.release.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		825DB54EDF9AE46748ED7611B839104F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF5A3DFDC7DCBF3A2DCA8F91C17BD9A6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CFA3CD969E69B0ED2FC82A10B5330336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA0B2E766439E8014F0833324AD10864 /* Keys.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Keys/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Keys/Keys.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Keys;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DBA199F61A0C57BF0189139553EADEB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA0B2E766439E8014F0833324AD10864 /* Keys.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Keys/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Keys/Keys.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Keys;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E21BA3C76A955AA8DD9852D46B75DAAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8251BB010B044461047D5EA4A337AFF6 /* Pods-NotifyHub.release.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-NotifyHub/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/Pods-NotifyHub/Pods-NotifyHub.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_NotifyHub;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		217BC6E7F83524691634AEB98A308AEC /* Build configuration list for PBXNativeTarget "Pods-NotifyHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F4A0C2453B1D263D572B5AB364836A /* Debug */,
+				E21BA3C76A955AA8DD9852D46B75DAAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E621D6BF749EDCE77ACBE7C6D464E29 /* Debug */,
 				5577A3F22A37686E40DB6863D68D476C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FA4D8F8E83CB743635E8EF6E9461D79 /* Build configuration list for PBXNativeTarget "Keys" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBA199F61A0C57BF0189139553EADEB1 /* Debug */,
+				CFA3CD969E69B0ED2FC82A10B5330336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F83FA9F6CE1584D3B3BD70CAF22C2038 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				825DB54EDF9AE46748ED7611B839104F /* Debug */,
+				682C3BE923C5EF2027AF6AF101BB0603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45269B931CD647180033085E /* libKeys.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45269B921CD647180033085E /* libKeys.a */; };
 		453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204501CD4EBDD0099F445 /* AppDelegate.swift */; };
 		453204531CD4EBDD0099F445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453204521CD4EBDD0099F445 /* Assets.xcassets */; };
 		4532045F1CD4F61B0099F445 /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 4532045E1CD4F61B0099F445 /* icon_256.png */; };
@@ -18,9 +19,13 @@
 		453204881CD50A180099F445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453204871CD50A180099F445 /* Main.storyboard */; };
 		4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204891CD50A3A0099F445 /* ViewController.swift */; };
 		4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4532048B1CD50C830099F445 /* WebKit.framework */; };
+		590E342F1329031C0CB849AC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3485313E4F83305BDB08AA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3485313E4F83305BDB08AA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45269B921CD647180033085E /* libKeys.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeys.a; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/libKeys.a"; sourceTree = "<group>"; };
+		45269B941CD647200033085E /* libPods-NotifyHub.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-NotifyHub.a"; path = "Pods/../build/Debug/libPods-NotifyHub.a"; sourceTree = "<group>"; };
 		4532044D1CD4EBDD0099F445 /* NotifyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotifyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453204501CD4EBDD0099F445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453204521CD4EBDD0099F445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +39,8 @@
 		453204871CD50A180099F445 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		453204891CD50A3A0099F445 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4532048B1CD50C830099F445 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D7EAE6BD40C08CD9343E38D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DC94C181495B096DEC39F2BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,19 +48,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45269B931CD647180033085E /* libKeys.a in Frameworks */,
 				4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */,
+				590E342F1329031C0CB849AC /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AEBB16E4E0BB76F096D84C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC94C181495B096DEC39F2BF /* Pods.debug.xcconfig */,
+				D7EAE6BD40C08CD9343E38D1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3EA4B64A369470953BA0A885 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45269B941CD647200033085E /* libPods-NotifyHub.a */,
+				45269B921CD647180033085E /* libKeys.a */,
+				3485313E4F83305BDB08AA36 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		453204441CD4EBDD0099F445 = {
 			isa = PBXGroup;
 			children = (
 				4532048B1CD50C830099F445 /* WebKit.framework */,
 				4532044F1CD4EBDD0099F445 /* NotifyHub */,
 				4532044E1CD4EBDD0099F445 /* Products */,
+				1AEBB16E4E0BB76F096D84C4 /* Pods */,
+				3EA4B64A369470953BA0A885 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4532045A1CD4EBDD0099F445 /* Build configuration list for PBXNativeTarget "NotifyHub" */;
 			buildPhases = (
+				A2B0B0BC9FDB8455C2D46BFC /* Check Pods Manifest.lock */,
 				453204491CD4EBDD0099F445 /* Sources */,
 				4532044A1CD4EBDD0099F445 /* Frameworks */,
 				4532044B1CD4EBDD0099F445 /* Resources */,
+				A0C771BED86EB78E30749E03 /* Embed Pods Frameworks */,
+				E7EF8E652A9DCA25B3C9748D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +194,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0C771BED86EB78E30749E03 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2B0B0BC9FDB8455C2D46BFC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E7EF8E652A9DCA25B3C9748D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		453204491CD4EBDD0099F445 /* Sources */ = {
@@ -257,11 +338,16 @@
 		};
 		4532045B1CD4EBDD0099F445 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC94C181495B096DEC39F2BF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = NotifyHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.tofu-kun.NotifyHub";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -269,11 +355,16 @@
 		};
 		4532045C1CD4EBDD0099F445 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7EAE6BD40C08CD9343E38D1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = NotifyHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.tofu-kun.NotifyHub";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

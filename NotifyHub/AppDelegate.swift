@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Keys
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
@@ -15,6 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        let keys = NotifyhubKeys()
+        
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notification = NSUserNotification()
         notification.title = "タイトル"
