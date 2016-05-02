@@ -11,10 +11,10 @@ import Keys
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
-
+    
     @IBOutlet weak var window: NSWindow!
-
-
+    
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
@@ -31,8 +31,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let appUrl = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("", isDirectory: true)
         let a:Bool = true
         _ = LSRegisterURL(appUrl as CFURL!, a)
+        
+        let accessToken = getAccessToekn()
+        if(accessToken != ""){
+            let url: NSURL = NSURL(string: "https://api.github.com/notifications?access_token=" + accessToken)!
+            let request: Request = Request()
+            
+            request.get(url, completionHandler: { data, response, error in
+                do {
+                    let responseJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSArray
+                    print(responseJson)
+                } catch  {
+                }
+            })
+        }
     }
-
+    
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
         
@@ -48,7 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let url = NSURL(string: event!.paramDescriptorForKeyword(AEKeyword(keyDirectObject))!.stringValue!)
         let querys = url!.query!.componentsSeparatedByString("=")
         print(querys[1])
-        fetchAccessToken(querys[1])
+        self.fetchAccessToken(querys[1])
     }
     
     func fetchAccessToken(code: String) {
@@ -60,30 +74,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         body.setValue(keys.gitHubClientSecret(), forKey: "client_secret")
         body.setValue(code, forKey: "code")
         
-        post(url, body: body, completionHandler: { data, response, error in
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print(responseString)
+        let request: Request = Request()
+        
+        request.post(url, body: body, completionHandler: { data, response, error in
+            do {
+                let responseJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
+                let accessToken = responseJson["access_token"]!
+                self.setAccessToken(accessToken as! String)
+            } catch  {
+            }
         })
     }
     
-    let session: NSURLSession = NSURLSession.sharedSession()
-    
-    func post(url: NSURL, body: NSMutableDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: url)
-        
-        request.HTTPMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.init(rawValue: 2))
-        } catch {
-            // Error Handling
-            print("NSJSONSerialization Error")
-            return
-        }
-        session.dataTaskWithRequest(request, completionHandler: completionHandler).resume()
+    func getAccessToekn() -> String{
+        let ud = NSUserDefaults.standardUserDefaults()
+        let accessToken = ud.objectForKey("access_token") as? String
+        return accessToken!
     }
     
-
+    func setAccessToken(accessToken: String) {
+        print(accessToken)
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(accessToken, forKey: "access_token")
+    }
+    
+    
 }
 
