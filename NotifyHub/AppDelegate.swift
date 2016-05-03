@@ -14,9 +14,21 @@ import Alamofire
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     
     @IBOutlet weak var window: NSWindow!
-    
+    var statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        
+        let menu = NSMenu()
+        self.statusItem.title = "NotifyHub"
+        self.statusItem.highlightMode = true
+        self.statusItem.menu = menu
+        
+        let menuItem = NSMenuItem()
+        menuItem.title = "Quit"
+        menuItem.action = Selector("quit:")
+        menu.addItem(menuItem)
+        
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notification = NSUserNotification()
