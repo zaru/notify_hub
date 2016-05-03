@@ -14,20 +14,17 @@ import Alamofire
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     
     @IBOutlet weak var window: NSWindow!
-    var statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    var statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
+    let popover = NSPopover()
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
+        if let button = statusItem.button {
+            button.image = NSImage(named: "StatusImage")
+            button.action = Selector("togglePopover:")
+        }
         
-        let menu = NSMenu()
-        self.statusItem.title = "NotifyHub"
-        self.statusItem.highlightMode = true
-        self.statusItem.menu = menu
-        
-        let menuItem = NSMenuItem()
-        menuItem.title = "Quit"
-        menuItem.action = Selector("quit:")
-        menu.addItem(menuItem)
+        popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
         
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
@@ -54,6 +51,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                     }
             }
         }
+    }
+    
+    
+    func togglePopover(sender: AnyObject?) {
+        if popover.shown {
+            closePopover(sender)
+        } else {
+            showPopover(sender)
+        }
+    }
+    
+    func showPopover(sender: AnyObject?) {
+        if let button = statusItem.button {
+            popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+        }
+    }
+    
+    func closePopover(sender: AnyObject?) {
+        popover.performClose(sender)
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {

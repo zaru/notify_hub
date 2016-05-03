@@ -19,6 +19,9 @@
 		453204881CD50A180099F445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453204871CD50A180099F445 /* Main.storyboard */; };
 		4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204891CD50A3A0099F445 /* ViewController.swift */; };
 		4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4532048B1CD50C830099F445 /* WebKit.framework */; };
+		458065021CD8E3E80047E631 /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 458065011CD8E3E80047E631 /* icon_16.png */; };
+		458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458065071CD8E9D40047E631 /* NotifyHubViewController.swift */; };
+		4580650A1CD8E9D40047E631 /* NotifyHubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458065081CD8E9D40047E631 /* NotifyHubViewController.xib */; };
 		45C850081CD792D700A39884 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C850071CD792D700A39884 /* Request.swift */; };
 		45C8500B1CD7955900A39884 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C850091CD7955900A39884 /* Alamofire.framework */; };
 		45C8500C1CD7955900A39884 /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8500A1CD7955900A39884 /* Keys.framework */; };
@@ -42,6 +45,9 @@
 		453204871CD50A180099F445 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		453204891CD50A3A0099F445 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4532048B1CD50C830099F445 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		458065011CD8E3E80047E631 /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16.png; sourceTree = "<group>"; };
+		458065071CD8E9D40047E631 /* NotifyHubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyHubViewController.swift; sourceTree = "<group>"; };
+		458065081CD8E9D40047E631 /* NotifyHubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotifyHubViewController.xib; sourceTree = "<group>"; };
 		45C850071CD792D700A39884 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		45C850091CD7955900A39884 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/Alamofire.framework"; sourceTree = "<group>"; };
 		45C8500A1CD7955900A39884 /* Keys.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Keys.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/Keys.framework"; sourceTree = "<group>"; };
@@ -117,6 +123,8 @@
 				453204521CD4EBDD0099F445 /* Assets.xcassets */,
 				453204571CD4EBDD0099F445 /* Info.plist */,
 				45C850071CD792D700A39884 /* Request.swift */,
+				458065071CD8E9D40047E631 /* NotifyHubViewController.swift */,
+				458065081CD8E9D40047E631 /* NotifyHubViewController.xib */,
 			);
 			path = NotifyHub;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 		4532045D1CD4F6010099F445 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				458065011CD8E3E80047E631 /* icon_16.png */,
 				453204681CD4F7080099F445 /* icon_32.png */,
 				453204601CD4F6C30099F445 /* icon_64.png */,
 				453204611CD4F6C30099F445 /* icon_128.png */,
@@ -198,7 +207,9 @@
 				453204671CD4F6C30099F445 /* icon_1024.png in Resources */,
 				453204641CD4F6C30099F445 /* icon_64.png in Resources */,
 				453204661CD4F6C30099F445 /* icon_512.png in Resources */,
+				4580650A1CD8E9D40047E631 /* NotifyHubViewController.xib in Resources */,
 				453204691CD4F7080099F445 /* icon_32.png in Resources */,
+				458065021CD8E3E80047E631 /* icon_16.png in Resources */,
 				453204651CD4F6C30099F445 /* icon_128.png in Resources */,
 				453204531CD4EBDD0099F445 /* Assets.xcassets in Resources */,
 				453204881CD50A180099F445 /* Main.storyboard in Resources */,
@@ -264,6 +275,7 @@
 				4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */,
 				45C850081CD792D700A39884 /* Request.swift in Sources */,
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,
+				458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
