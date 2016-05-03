@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'NotifyHub' do
-
+    pod 'Alamofire', '~> 3.3'
 end
 
 plugin 'cocoapods-keys', {

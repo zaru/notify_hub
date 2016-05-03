@@ -8,6 +8,7 @@
 
 import Cocoa
 import Keys
+import Alamofire
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
@@ -34,16 +35,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         
         let accessToken = getAccessToekn()
         if(accessToken != ""){
-            let url: NSURL = NSURL(string: "https://api.github.com/notifications?access_token=" + accessToken)!
-            let request: Request = Request()
-            
-            request.get(url, completionHandler: { data, response, error in
-                do {
-                    let responseJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSArray
-                    print(responseJson)
-                } catch  {
-                }
-            })
+            Alamofire.request(.GET, "https://api.github.com/notifications", parameters: ["access_token": accessToken])
+                .responseJSON { response in
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                    }
+            }
         }
     }
     
