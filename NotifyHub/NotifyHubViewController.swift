@@ -10,6 +10,8 @@ import Cocoa
 
 class NotifyHubViewController: NSViewController {
 
+    @IBOutlet weak var tv: NSScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

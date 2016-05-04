@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class NotificationModel {
     
@@ -17,8 +18,12 @@ class NotificationModel {
         if(accessToken != ""){
             Alamofire.request(.GET, "https://api.github.com/notifications", parameters: ["access_token": accessToken])
                 .responseJSON { response in
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
+                    guard let object = response.result.value else {
+                        return
+                    }
+                    let json = JSON(object)
+                    json.forEach { (_, json) in
+                        print(json["subject"]["title"])
                     }
             }
         }

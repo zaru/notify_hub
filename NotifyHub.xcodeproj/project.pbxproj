@@ -27,6 +27,7 @@
 		45C850081CD792D700A39884 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C850071CD792D700A39884 /* Request.swift */; };
 		45C8500B1CD7955900A39884 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C850091CD7955900A39884 /* Alamofire.framework */; };
 		45C8500C1CD7955900A39884 /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8500A1CD7955900A39884 /* Keys.framework */; };
+		45CA6F411CDA389400BC44F7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CA6F401CDA389400BC44F7 /* SwiftyJSON.framework */; };
 		590E342F1329031C0CB849AC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3485313E4F83305BDB08AA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		45C850071CD792D700A39884 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		45C850091CD7955900A39884 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/Alamofire.framework"; sourceTree = "<group>"; };
 		45C8500A1CD7955900A39884 /* Keys.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Keys.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/Keys.framework"; sourceTree = "<group>"; };
+		45CA6F401CDA389400BC44F7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		D7EAE6BD40C08CD9343E38D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC94C181495B096DEC39F2BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E20F8006F3D63C7CC808E262 /* Pods_NotifyHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotifyHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45CA6F411CDA389400BC44F7 /* SwiftyJSON.framework in Frameworks */,
 				45C8500B1CD7955900A39884 /* Alamofire.framework in Frameworks */,
 				45C8500C1CD7955900A39884 /* Keys.framework in Frameworks */,
 				4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */,
@@ -88,6 +91,7 @@
 		3EA4B64A369470953BA0A885 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45CA6F401CDA389400BC44F7 /* SwiftyJSON.framework */,
 				45C850091CD7955900A39884 /* Alamofire.framework */,
 				45C8500A1CD7955900A39884 /* Keys.framework */,
 				45269B941CD647200033085E /* libPods-NotifyHub.a */,

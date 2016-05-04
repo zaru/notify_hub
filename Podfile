@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'NotifyHub' do
     pod 'Alamofire', '~> 3.3'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 
 plugin 'cocoapods-keys', {
