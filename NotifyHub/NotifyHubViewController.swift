@@ -13,6 +13,9 @@ class NotifyHubViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        let notificationModel = NotificationModel()
+        notificationModel.fetchLists()
     }
     
 }

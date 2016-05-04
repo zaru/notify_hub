@@ -41,16 +41,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let appUrl = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("", isDirectory: true)
         let a:Bool = true
         _ = LSRegisterURL(appUrl as CFURL!, a)
-        
-        let accessToken = getAccessToekn()
-        if(accessToken != ""){
-            Alamofire.request(.GET, "https://api.github.com/notifications", parameters: ["access_token": accessToken])
-                .responseJSON { response in
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
-                    }
-            }
-        }
     }
     
     
@@ -105,22 +95,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             do {
                 let responseJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 let accessToken = responseJson["access_token"]!
-                self.setAccessToken(accessToken as! String)
+                GitHubModel().setAccessToken(accessToken as! String)
             } catch  {
             }
         })
-    }
-    
-    func getAccessToekn() -> String{
-        let ud = NSUserDefaults.standardUserDefaults()
-        let accessToken = ud.objectForKey("access_token") as? String
-        return accessToken!
-    }
-    
-    func setAccessToken(accessToken: String) {
-        print(accessToken)
-        let ud = NSUserDefaults.standardUserDefaults()
-        ud.setObject(accessToken, forKey: "access_token")
     }
     
     

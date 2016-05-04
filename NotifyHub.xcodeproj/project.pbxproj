@@ -22,6 +22,8 @@
 		458065021CD8E3E80047E631 /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 458065011CD8E3E80047E631 /* icon_16.png */; };
 		458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458065071CD8E9D40047E631 /* NotifyHubViewController.swift */; };
 		4580650A1CD8E9D40047E631 /* NotifyHubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458065081CD8E9D40047E631 /* NotifyHubViewController.xib */; };
+		45C357461CDA2BA1002FADF7 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C357451CDA2BA1002FADF7 /* NotificationModel.swift */; };
+		45C357481CDA2BFD002FADF7 /* GitHubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C357471CDA2BFD002FADF7 /* GitHubModel.swift */; };
 		45C850081CD792D700A39884 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C850071CD792D700A39884 /* Request.swift */; };
 		45C8500B1CD7955900A39884 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C850091CD7955900A39884 /* Alamofire.framework */; };
 		45C8500C1CD7955900A39884 /* Keys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8500A1CD7955900A39884 /* Keys.framework */; };
@@ -48,6 +50,8 @@
 		458065011CD8E3E80047E631 /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16.png; sourceTree = "<group>"; };
 		458065071CD8E9D40047E631 /* NotifyHubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyHubViewController.swift; sourceTree = "<group>"; };
 		458065081CD8E9D40047E631 /* NotifyHubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotifyHubViewController.xib; sourceTree = "<group>"; };
+		45C357451CDA2BA1002FADF7 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		45C357471CDA2BFD002FADF7 /* GitHubModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubModel.swift; sourceTree = "<group>"; };
 		45C850071CD792D700A39884 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		45C850091CD7955900A39884 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/Alamofire.framework"; sourceTree = "<group>"; };
 		45C8500A1CD7955900A39884 /* Keys.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Keys.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/Keys.framework"; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				45C850071CD792D700A39884 /* Request.swift */,
 				458065071CD8E9D40047E631 /* NotifyHubViewController.swift */,
 				458065081CD8E9D40047E631 /* NotifyHubViewController.xib */,
+				45C357451CDA2BA1002FADF7 /* NotificationModel.swift */,
+				45C357471CDA2BFD002FADF7 /* GitHubModel.swift */,
 			);
 			path = NotifyHub;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 			files = (
 				4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */,
 				45C850081CD792D700A39884 /* Request.swift in Sources */,
+				45C357481CDA2BFD002FADF7 /* GitHubModel.swift in Sources */,
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,
+				45C357461CDA2BA1002FADF7 /* NotificationModel.swift in Sources */,
 				458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
