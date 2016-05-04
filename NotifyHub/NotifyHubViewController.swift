@@ -17,7 +17,9 @@ class NotifyHubViewController: NSViewController {
         // Do view setup here.
         
         let notificationModel = NotificationModel()
-        notificationModel.fetchLists()
+        notificationModel.fetchLists({ json in
+            print(json)
+        })
     }
     
 }
