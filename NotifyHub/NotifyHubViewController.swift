@@ -20,6 +20,7 @@ class NotifyHubViewController: NSViewController, NSTableViewDelegate, NSTableVie
         
         tableView.setDelegate(self)
         tableView.setDataSource(self)
+        tableView.headerView = nil
         
         let notificationModel = NotificationModel()
         notificationModel.fetchLists({ json in
@@ -37,10 +38,8 @@ class NotifyHubViewController: NSViewController, NSTableViewDelegate, NSTableVie
                                              row rowIndex: Int) -> AnyObject?
     {
         let columnName = aTableColumn?.identifier
-        print(columnName)
         
         if columnName == "Message" {
-            print(self.lists[rowIndex])
             return self.lists[rowIndex]
         }
         return ""              
