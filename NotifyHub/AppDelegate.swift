@@ -41,6 +41,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let appUrl = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("", isDirectory: true)
         let a:Bool = true
         _ = LSRegisterURL(appUrl as CFURL!, a)
+        
+        let gitHubModel = GitHubModel()
+        let accessToken = gitHubModel.getAccessToekn()
+        if accessToken == "" {
+            popover.contentViewController = GitHubOauthViewController(nibName: "GitHubOauthViewController", bundle: nil)
+
+        }
     }
     
     
