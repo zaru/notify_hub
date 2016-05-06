@@ -11,8 +11,8 @@ import Foundation
 class GitHubModel {
     func getAccessToekn() -> String{
         let ud = NSUserDefaults.standardUserDefaults()
-        let accessToken = ud.objectForKey("access_token") as? String
-        return accessToken!
+        ud.registerDefaults(["access_token": ""])
+        return ud.objectForKey("access_token") as! String
     }
     
     func setAccessToken(accessToken: String) {
