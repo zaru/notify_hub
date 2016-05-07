@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         } else {
             popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
         }
+        popover.behavior = .Transient
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notification = NSUserNotification()
@@ -61,6 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+            NSApplication.sharedApplication().activateIgnoringOtherApps(true)
         }
     }
     
