@@ -10,8 +10,9 @@ import Cocoa
 
 class MyCellView: NSView {
     
-    @IBOutlet weak var itemName: NSTextField!
-    @IBOutlet weak var itemDescription: NSTextField!
-    @IBOutlet weak var itemImage: NSImageView!
+    @IBOutlet weak var itemTitle: NSTextField!
+    @IBOutlet weak var itemRepositoryName: NSTextField!
+    @IBOutlet weak var itemUpdatedAt: NSTextField!
+    @IBOutlet weak var itemIcon: NSImageView!
     
 }

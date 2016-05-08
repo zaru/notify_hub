@@ -41,7 +41,20 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeViewWithIdentifier("MyCellView", owner: self) as! MyCellView
-        cell.itemName.stringValue = self.lists[row]["title"]!
+        cell.itemTitle.stringValue = self.lists[row]["title"]!
+        cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
+        cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
+        
+        let url = NSURL(string: self.lists[row]["icon"]!);
+        let imgData: NSData
+        
+        do {
+            imgData = try NSData(contentsOfURL:url!,options: NSDataReadingOptions.DataReadingMappedIfSafe)
+            let img = NSImage(data:imgData);
+            cell.itemIcon.image = img
+        } catch {
+            print("Error: can't create image.")
+        }
         
         return cell
     }

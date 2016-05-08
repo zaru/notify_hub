@@ -22,10 +22,16 @@ class NotificationModel {
                         return
                     }
                     let json = JSON(object)
+                    print(json)
                     var result: [[String:String]] = []
                     json.forEach { (_, json) in
                         let dic:[String:String] = [
-                            "title":json["subject"]["title"].string!
+                            "title":json["subject"]["title"].string!,
+                            "type":json["subject"]["type"].string!,
+                            "repository":json["repository"]["full_name"].string!,
+                            "url":json["subject"]["url"].string!,
+                            "updated_at":json["updated_at"].string!,
+                            "icon":json["repository"]["owner"]["avatar_url"].string!
                         ]
                         result.append(dic)
                     }
