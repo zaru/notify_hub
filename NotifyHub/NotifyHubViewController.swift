@@ -12,7 +12,7 @@ class NotifyHubViewController: NSViewController {
 
     
     @IBOutlet weak var tableView: NSTableView!
-    var lists: [String] = []
+    var lists: [[String:String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeViewWithIdentifier("MyCellView", owner: self) as! MyCellView
-        cell.itemName.stringValue = self.lists[row]
+        cell.itemName.stringValue = self.lists[row]["title"]!
         
         return cell
     }

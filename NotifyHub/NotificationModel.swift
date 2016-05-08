@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class NotificationModel {
     
-    func fetchLists(callback: (Array<String>) -> Void) {
+    func fetchLists(callback: (Array<[String:String]>) -> Void) {
         let gitHubModel = GitHubModel()
         let accessToken = gitHubModel.getAccessToekn()
         if(accessToken != ""){
@@ -22,9 +22,12 @@ class NotificationModel {
                         return
                     }
                     let json = JSON(object)
-                    var result: [String] = []
+                    var result: [[String:String]] = []
                     json.forEach { (_, json) in
-                        result.append(json["subject"]["title"].string!)
+                        let dic:[String:String] = [
+                            "title":json["subject"]["title"].string!
+                        ]
+                        result.append(dic)
                     }
                     callback(result)
             }
