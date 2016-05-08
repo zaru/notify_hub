@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Alamofire
+import AlamofireImage
 
 class NotifyHubViewController: NSViewController {
 
@@ -45,17 +47,12 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
         cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
         
-        let url = NSURL(string: self.lists[row]["icon"]!);
-        let imgData: NSData
-        
-        do {
-            imgData = try NSData(contentsOfURL:url!,options: NSDataReadingOptions.DataReadingMappedIfSafe)
-            let img = NSImage(data:imgData);
-            cell.itemIcon.image = img
-        } catch {
-            print("Error: can't create image.")
+        Alamofire.request(.GET, self.lists[row]["icon"]!)
+            .responseImage { response in
+                if let image = response.result.value {
+                    cell.itemIcon.image = image
+                }
         }
-        
         return cell
     }
 }
