@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class NotifyHubViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class NotifyHubViewController: NSViewController {
 
     
     @IBOutlet weak var tableView: NSTableView!
@@ -17,10 +17,8 @@ class NotifyHubViewController: NSViewController, NSTableViewDelegate, NSTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        tableView.setDelegate(self)
-        tableView.setDataSource(self)
-        tableView.headerView = nil
+        let nib = NSNib(nibNamed: "MyCellView", bundle: NSBundle.mainBundle())
+        tableView.registerNib(nib!, forIdentifier: "MyCellView")
         
         let notificationModel = NotificationModel()
         notificationModel.fetchLists({ json in
@@ -29,20 +27,22 @@ class NotifyHubViewController: NSViewController, NSTableViewDelegate, NSTableVie
         })
     }
     
-    func numberOfRowsInTableView(aTableView: NSTableView) -> Int
-    {
+}
+
+extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
+    
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return self.lists.count
     }
-    func tableView(aTableView: NSTableView,
-                   objectValueForTableColumn aTableColumn: NSTableColumn?,
-                                             row rowIndex: Int) -> AnyObject?
-    {
-        let columnName = aTableColumn?.identifier
-        
-        if columnName == "Message" {
-            return self.lists[rowIndex]
-        }
-        return ""              
+    
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 50
     }
     
+    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.makeViewWithIdentifier("MyCellView", owner: self) as! MyCellView
+        cell.itemName.stringValue = "test"
+        
+        return cell
+    }
 }

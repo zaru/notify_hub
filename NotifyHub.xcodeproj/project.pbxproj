@@ -19,6 +19,8 @@
 		453204881CD50A180099F445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453204871CD50A180099F445 /* Main.storyboard */; };
 		4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204891CD50A3A0099F445 /* ViewController.swift */; };
 		4532048C1CD50C830099F445 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4532048B1CD50C830099F445 /* WebKit.framework */; };
+		45414DD21CDF60A90010A4DF /* MyCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45414DD11CDF60A90010A4DF /* MyCellView.xib */; };
+		45414DD41CDF60B50010A4DF /* MyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45414DD31CDF60B50010A4DF /* MyCellView.swift */; };
 		457F10C81CDCE73F00748EE9 /* GitHubOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F10C61CDCE73F00748EE9 /* GitHubOauthViewController.swift */; };
 		457F10C91CDCE73F00748EE9 /* GitHubOauthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */; };
 		458065021CD8E3E80047E631 /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 458065011CD8E3E80047E631 /* icon_16.png */; };
@@ -50,6 +52,8 @@
 		453204871CD50A180099F445 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		453204891CD50A3A0099F445 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4532048B1CD50C830099F445 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		45414DD11CDF60A90010A4DF /* MyCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCellView.xib; sourceTree = "<group>"; };
+		45414DD31CDF60B50010A4DF /* MyCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellView.swift; sourceTree = "<group>"; };
 		457F10C61CDCE73F00748EE9 /* GitHubOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubOauthViewController.swift; sourceTree = "<group>"; };
 		457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitHubOauthViewController.xib; sourceTree = "<group>"; };
 		458065011CD8E3E80047E631 /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16.png; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */,
 				458065071CD8E9D40047E631 /* NotifyHubViewController.swift */,
 				458065081CD8E9D40047E631 /* NotifyHubViewController.xib */,
+				45414DD11CDF60A90010A4DF /* MyCellView.xib */,
+				45414DD31CDF60B50010A4DF /* MyCellView.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				453204641CD4F6C30099F445 /* icon_64.png in Resources */,
 				453204661CD4F6C30099F445 /* icon_512.png in Resources */,
 				4580650A1CD8E9D40047E631 /* NotifyHubViewController.xib in Resources */,
+				45414DD21CDF60A90010A4DF /* MyCellView.xib in Resources */,
 				453204691CD4F7080099F445 /* icon_32.png in Resources */,
 				458065021CD8E3E80047E631 /* icon_16.png in Resources */,
 				457F10C91CDCE73F00748EE9 /* GitHubOauthViewController.xib in Resources */,
@@ -309,6 +316,7 @@
 				45C850081CD792D700A39884 /* Request.swift in Sources */,
 				457F10C81CDCE73F00748EE9 /* GitHubOauthViewController.swift in Sources */,
 				45C357481CDA2BFD002FADF7 /* GitHubModel.swift in Sources */,
+				45414DD41CDF60B50010A4DF /* MyCellView.swift in Sources */,
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,
 				45C357461CDA2BA1002FADF7 /* NotificationModel.swift in Sources */,
 				458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */,
