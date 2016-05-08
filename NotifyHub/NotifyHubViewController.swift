@@ -41,7 +41,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeViewWithIdentifier("MyCellView", owner: self) as! MyCellView
-        cell.itemName.stringValue = "test"
+        cell.itemName.stringValue = self.lists[row]
         
         return cell
     }
