@@ -17,6 +17,10 @@ class GitHubOauthViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let storage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        for cookie : NSHTTPCookie in NSHTTPCookieStorage.sharedHTTPCookieStorage().cookiesForURL(NSURL(string: "https://github.com")!)! as [NSHTTPCookie] {
+            storage.deleteCookie(cookie)
+        }
         
         let keys = NotifyhubKeys()
         
