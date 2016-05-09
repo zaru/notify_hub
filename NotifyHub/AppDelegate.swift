@@ -24,13 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             button.action = Selector("togglePopover:")
         }
         
-        let gitHubModel = GitHubModel()
-        let accessToken = gitHubModel.getAccessToekn()
-        if accessToken == "" {
-            popover.contentViewController = GitHubOauthViewController(nibName: "GitHubOauthViewController", bundle: nil)
-        } else {
-            popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
-        }
         popover.behavior = .Transient
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
@@ -55,14 +48,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if popover.shown {
             closePopover(sender)
         } else {
+            
             showPopover(sender)
         }
     }
     
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
+            
+            let gitHubModel = GitHubModel()
+            let accessToken = gitHubModel.getAccessToekn()
+            if accessToken == "" {
+                popover.contentViewController = GitHubOauthViewController(nibName: "GitHubOauthViewController", bundle: nil)
+            } else {
+                popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
+            }
+            
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
             NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+            
+            
         }
     }
     
