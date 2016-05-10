@@ -55,4 +55,9 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         }
         return cell
     }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        print(self.tableView.selectedRow)
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: self.lists[self.tableView.selectedRow]["url"]!)!)
+    }
 }
