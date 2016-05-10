@@ -9,6 +9,7 @@
 import Cocoa
 import Alamofire
 import AlamofireImage
+import SwiftyJSON
 
 class NotifyHubViewController: NSViewController {
 
@@ -58,6 +59,22 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     func tableViewSelectionDidChange(notification: NSNotification) {
         print(self.tableView.selectedRow)
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: self.lists[self.tableView.selectedRow]["url"]!)!)
+        let gitHubModel = GitHubModel()
+        let accessToken = gitHubModel.getAccessToekn()
+        let headers = [
+            "Authorization": "token " + accessToken
+        ]
+        
+        Alamofire.request(.GET, self.lists[self.tableView.selectedRow]["url"]!, headers: headers)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                NSWorkspace.sharedWorkspace().openURL(NSURL(string: json["html_url"].string!)!)
+        }
+        
+        
+        
     }
 }
