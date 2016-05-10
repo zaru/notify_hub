@@ -24,7 +24,7 @@ class GitHubOauthViewController: NSViewController {
         
         let keys = NotifyhubKeys()
         
-        let url = NSURL(string : "https://github.com/login/oauth/authorize?client_id=" + keys.gitHubClientId() + "&scope=notifications")
+        let url = NSURL(string : "https://github.com/login/oauth/authorize?client_id=" + keys.gitHubClientId() + "&scope=notifications,repo")
         let urlRequest = NSURLRequest(URL: url!)
         self.wv.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A365 Safari/600.1.4"
         self.wv.mainFrame.loadRequest(urlRequest)
