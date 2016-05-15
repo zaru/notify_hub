@@ -16,6 +16,7 @@ class NotificationModel {
         let gitHubModel = GitHubModel()
         let accessToken = gitHubModel.getAccessToekn()
         if(accessToken != ""){
+            print(accessToken)
             Alamofire.request(.GET, "https://api.github.com/notifications", parameters: ["access_token": accessToken])
                 .responseJSON { response in
                     guard let object = response.result.value else {

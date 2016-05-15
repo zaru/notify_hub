@@ -11,11 +11,12 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class NotifyHubViewController: NSViewController {
-
+class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     
+    @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var tableView: NSTableView!
     var lists: [[String:String]] = []
+    var listsOrg: [[String:String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,26 @@ class NotifyHubViewController: NSViewController {
         let notificationModel = NotificationModel()
         notificationModel.fetchLists({ json in
             self.lists = json
+            self.listsOrg = json
             self.tableView.reloadData()
         })
+        
+        if #available(OSX 10.11, *) {
+            self.searchField.delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    override func controlTextDidChange(obj: NSNotification) {
+        if self.searchField.stringValue.characters.count > 0 {
+            let filterPredicate = NSPredicate(format: "title CONTAINS[cd] %@", self.searchField.stringValue)
+            let newLists = (self.lists as NSArray).filteredArrayUsingPredicate(filterPredicate)
+            self.lists = newLists as! Array<[String:String]>
+        } else {
+            self.lists = self.listsOrg
+        }
+        self.tableView.reloadData()
     }
     
 }
