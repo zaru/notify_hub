@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     
+    @IBOutlet weak var preferenceBtn: NSButton!
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var tableView: NSTableView!
     var lists: [[String:String]] = []
@@ -36,6 +37,8 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         } else {
             // Fallback on earlier versions
         }
+        
+        self.preferenceBtn.action = #selector(openPreference)
     }
     
     override func controlTextDidChange(obj: NSNotification) {
@@ -47,6 +50,11 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
             self.lists = self.listsOrg
         }
         self.tableView.reloadData()
+    }
+    
+    func openPreference (){
+        let preferenceViewController = PreferenceViewController()
+        self.presentViewControllerAsModalWindow(preferenceViewController)
     }
     
 }
