@@ -21,18 +21,18 @@
                     <tabViewItems>
                         <tabViewItem label="Preference" identifier="1" id="zdI-gL-41e">
                             <view key="view" ambiguous="YES" id="lKh-wx-cxD">
-                                <rect key="frame" x="10" y="33" width="280" height="94"/>
+                                <rect key="frame" x="10" y="33" width="72" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZi-f6-134">
-                                        <rect key="frame" x="70" y="62" width="141" height="18"/>
+                                        <rect key="frame" x="70" y="-32" width="141" height="18"/>
                                         <buttonCell key="cell" type="check" title="own repository only" bezelStyle="regularSquare" imagePosition="left" inset="2" id="cfE-ne-PEQ">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-ba-xgU">
-                                        <rect key="frame" x="70" y="28" width="99" height="18"/>
+                                        <rect key="frame" x="70" y="-66" width="99" height="18"/>
                                         <buttonCell key="cell" type="check" title="participating" bezelStyle="regularSquare" imagePosition="left" inset="2" id="0yC-fY-J2g">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
