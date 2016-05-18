@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B42DD5CAD73159BEA68DEAF /* Pods_NotifyHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20F8006F3D63C7CC808E262 /* Pods_NotifyHub.framework */; };
+		45267A7D1CECA25C001FFC93 /* PreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45267A7C1CECA25C001FFC93 /* PreferenceModel.swift */; };
 		453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204501CD4EBDD0099F445 /* AppDelegate.swift */; };
 		453204531CD4EBDD0099F445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453204521CD4EBDD0099F445 /* Assets.xcassets */; };
 		4532045F1CD4F61B0099F445 /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 4532045E1CD4F61B0099F445 /* icon_256.png */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3485313E4F83305BDB08AA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45267A7C1CECA25C001FFC93 /* PreferenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceModel.swift; sourceTree = "<group>"; };
 		45269B921CD647180033085E /* libKeys.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeys.a; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/libKeys.a"; sourceTree = "<group>"; };
 		45269B941CD647200033085E /* libPods-NotifyHub.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-NotifyHub.a"; path = "Pods/../build/Debug/libPods-NotifyHub.a"; sourceTree = "<group>"; };
 		4532044D1CD4EBDD0099F445 /* NotifyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotifyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			children = (
 				45C357451CDA2BA1002FADF7 /* NotificationModel.swift */,
 				45C357471CDA2BFD002FADF7 /* GitHubModel.swift */,
+				45267A7C1CECA25C001FFC93 /* PreferenceModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				453739661CEB4F7900C0123C /* PreferenceViewController.swift in Sources */,
 				4532048A1CD50A3A0099F445 /* ViewController.swift in Sources */,
+				45267A7D1CECA25C001FFC93 /* PreferenceModel.swift in Sources */,
 				45C850081CD792D700A39884 /* Request.swift in Sources */,
 				457F10C81CDCE73F00748EE9 /* GitHubOauthViewController.swift in Sources */,
 				45C357481CDA2BFD002FADF7 /* GitHubModel.swift in Sources */,

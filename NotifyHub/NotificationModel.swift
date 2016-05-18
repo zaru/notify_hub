@@ -17,7 +17,13 @@ class NotificationModel {
         let accessToken = gitHubModel.getAccessToekn()
         if(accessToken != ""){
             print(accessToken)
-            Alamofire.request(.GET, "https://api.github.com/notifications", parameters: ["access_token": accessToken])
+            
+            var params = ["access_token": accessToken]
+            if PreferenceModel().getParticipating() {
+                params["participating"] = "true"
+            }
+            
+            Alamofire.request(.GET, "https://api.github.com/notifications", parameters: params)
                 .responseJSON { response in
                     guard let object = response.result.value else {
                         return
