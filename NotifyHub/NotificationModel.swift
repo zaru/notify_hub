@@ -23,7 +23,7 @@ class NotificationModel {
                 params["participating"] = "true"
             }
             
-            Alamofire.request(.GET, "https://api.github.com/notifications", parameters: params)
+            Alamofire.request(.GET, "https://api.github.com/notifications", headers:["Cache-Control": "no-cache"], parameters: params)
                 .responseJSON { response in
                     guard let object = response.result.value else {
                         return
@@ -31,15 +31,18 @@ class NotificationModel {
                     let json = JSON(object)
                     var result: [[String:String]] = []
                     json.forEach { (_, json) in
-                        let dic:[String:String] = [
-                            "title":json["subject"]["title"].string!,
-                            "type":json["subject"]["type"].string!,
-                            "repository":json["repository"]["full_name"].string!,
-                            "url":json["subject"]["url"].string!,
-                            "updated_at":json["updated_at"].string!,
-                            "icon":json["repository"]["owner"]["avatar_url"].string!
-                        ]
-                        result.append(dic)
+                        print(json["repository"]["owner"]["login"])
+                        if "zaru" == json["repository"]["owner"]["login"] {
+                            let dic:[String:String] = [
+                                "title":json["subject"]["title"].string!,
+                                "type":json["subject"]["type"].string!,
+                                "repository":json["repository"]["full_name"].string!,
+                                "url":json["subject"]["url"].string!,
+                                "updated_at":json["updated_at"].string!,
+                                "icon":json["repository"]["owner"]["avatar_url"].string!
+                            ]
+                            result.append(dic)
+                        }
                     }
                     callback(result)
             }

@@ -19,6 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
+        // debug setting
+        NSURLCache.sharedURLCache().memoryCapacity = 0
+        NSURLCache.sharedURLCache().diskCapacity = 0
+        
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusImage")
             button.action = Selector("togglePopover:")

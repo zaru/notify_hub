@@ -19,4 +19,15 @@ class PreferenceModel {
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(participating, forKey: "participating")
     }
+    
+    func getOwnerOnly() -> Bool{
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.registerDefaults(["owner_only": false])
+        return ud.objectForKey("owner_only") as! Bool
+    }
+    
+    func setOwnerOnly(participating: Bool) {
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(participating, forKey: "owner_only")
+    }
 }
