@@ -31,7 +31,6 @@ class NotificationModel {
                     let json = JSON(object)
                     var result: [[String:String]] = []
                     json.forEach { (_, json) in
-                        print(json["repository"]["owner"]["login"])
                         if "zaru" == json["repository"]["owner"]["login"] {
                             let dic:[String:String] = [
                                 "title":json["subject"]["title"].string!,
