@@ -30,6 +30,9 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="own:" target="-2" id="ffI-N3-wDP"/>
+                                        </connections>
                                     </button>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-ba-xgU">
                                         <rect key="frame" x="70" y="-66" width="99" height="18"/>
@@ -37,6 +40,9 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="participating:" target="-2" id="Kmc-Hc-sfK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
