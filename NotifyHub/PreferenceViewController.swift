@@ -9,18 +9,24 @@
 import Cocoa
 
 class PreferenceViewController: NSViewController {
-
+    
+    
+    let preferenceModel = PreferenceModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
-    @IBAction func participating(sender: AnyObject) {
-        print("participating")
+    @IBAction func participating(sender: NSButton) {
+        let state = (NSOnState == sender.state) ? true : false
+        self.preferenceModel.setParticipating(state)
+        
         
     }
-    @IBAction func own(sender: AnyObject) {
-        print("own")
+    @IBAction func own(sender: NSButton) {
+        let state = (NSOnState == sender.state) ? true : false
+        self.preferenceModel.setOwnerOnly(state)
     }
     
 }
