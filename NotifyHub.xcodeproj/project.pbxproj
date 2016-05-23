@@ -25,6 +25,7 @@
 		45414DD21CDF60A90010A4DF /* MyCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45414DD11CDF60A90010A4DF /* MyCellView.xib */; };
 		45414DD41CDF60B50010A4DF /* MyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45414DD31CDF60B50010A4DF /* MyCellView.swift */; };
 		45414DD61CDF91110010A4DF /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45414DD51CDF91110010A4DF /* AlamofireImage.framework */; };
+		457040291CF337310051EFA1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457040281CF337310051EFA1 /* UserModel.swift */; };
 		457F10C81CDCE73F00748EE9 /* GitHubOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F10C61CDCE73F00748EE9 /* GitHubOauthViewController.swift */; };
 		457F10C91CDCE73F00748EE9 /* GitHubOauthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */; };
 		458065021CD8E3E80047E631 /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 458065011CD8E3E80047E631 /* icon_16.png */; };
@@ -62,6 +63,7 @@
 		45414DD11CDF60A90010A4DF /* MyCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCellView.xib; sourceTree = "<group>"; };
 		45414DD31CDF60B50010A4DF /* MyCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellView.swift; sourceTree = "<group>"; };
 		45414DD51CDF91110010A4DF /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/AlamofireImage.framework"; sourceTree = "<group>"; };
+		457040281CF337310051EFA1 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		457F10C61CDCE73F00748EE9 /* GitHubOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubOauthViewController.swift; sourceTree = "<group>"; };
 		457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitHubOauthViewController.xib; sourceTree = "<group>"; };
 		458065011CD8E3E80047E631 /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16.png; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				45C357451CDA2BA1002FADF7 /* NotificationModel.swift */,
 				45C357471CDA2BFD002FADF7 /* GitHubModel.swift */,
 				45267A7C1CECA25C001FFC93 /* PreferenceModel.swift */,
+				457040281CF337310051EFA1 /* UserModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,
 				45C357461CDA2BA1002FADF7 /* NotificationModel.swift in Sources */,
 				458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */,
+				457040291CF337310051EFA1 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
