@@ -15,4 +15,12 @@ class PreferenceViewController: NSViewController {
         // Do view setup here.
     }
     
+    @IBAction func participating(sender: AnyObject) {
+        print("participating")
+        
+    }
+    @IBAction func own(sender: AnyObject) {
+        print("own")
+    }
+    
 }
