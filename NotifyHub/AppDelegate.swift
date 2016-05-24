@@ -30,6 +30,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         
         popover.behavior = .Transient
         
+        let gitHubModel = GitHubModel()
+        let accessToken = gitHubModel.getAccessToekn()
+        if accessToken == "" {
+            popover.contentViewController = GitHubOauthViewController(nibName: "GitHubOauthViewController", bundle: nil)
+        } else {
+            popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
+        }
+        
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
         let notification = NSUserNotification()
         notification.title = "タイトル"
@@ -52,26 +60,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if popover.shown {
             closePopover(sender)
         } else {
-            
             showPopover(sender)
         }
     }
     
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
-            
-            let gitHubModel = GitHubModel()
-            let accessToken = gitHubModel.getAccessToekn()
-            if accessToken == "" {
-                popover.contentViewController = GitHubOauthViewController(nibName: "GitHubOauthViewController", bundle: nil)
-            } else {
-                popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
-            }
-            
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
             NSApplication.sharedApplication().activateIgnoringOtherApps(true)
-            
-            
         }
     }
     
@@ -97,6 +93,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         self.fetchAccessToken(querys[1])
         
         popover.performClose(nil)
+        popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
     }
     
     func fetchAccessToken(code: String) {

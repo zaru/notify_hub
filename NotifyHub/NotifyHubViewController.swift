@@ -21,6 +21,9 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("viewDidLoad")
+        
         // Do view setup here.
         let nib = NSNib(nibNamed: "MyCellView", bundle: NSBundle.mainBundle())
         tableView.registerNib(nib!, forIdentifier: "MyCellView")
