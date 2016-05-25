@@ -16,8 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     @IBOutlet weak var window: NSWindow!
     var statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
+    let MyNotification = "MyNotification"
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.updatePopoverView(_:)), name: MyNotification, object: nil)
         
         // debug setting
         NSURLCache.sharedURLCache().memoryCapacity = 0
@@ -93,7 +96,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         self.fetchAccessToken(querys[1])
         
         popover.performClose(nil)
-        popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
     }
     
     func fetchAccessToken(code: String) {
@@ -112,8 +114,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
                 let responseJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 let accessToken = responseJson["access_token"]!
                 GitHubModel().setAccessToken(accessToken as! String)
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(self.MyNotification, object: nil)
             } catch  {
             }
+        })
+    }
+    
+    func updatePopoverView(notification: NSNotification?) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
         })
     }
     
