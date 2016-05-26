@@ -60,6 +60,7 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     
     func timerFetch(timer: NSTimer){
         fetchNotificationData()
+        dispNotification()
     }
     
     func fetchNotificationData(){
@@ -70,6 +71,16 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
             self.listsOrg = json
             self.tableView.reloadData()
         })
+    }
+    
+    func dispNotification(){
+        let notification = NSUserNotification()
+        notification.title = "タイトル"
+        notification.subtitle = "サブタイトル1"
+        notification.informativeText = "test"
+        notification.contentImage =  NSImage(named: "icon_256")
+        notification.userInfo = ["title" : "タイトル"]
+        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
     }
     
 }
