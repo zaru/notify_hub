@@ -24,16 +24,14 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         
         print("viewDidLoad")
         
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: #selector(NotifyHubViewController.timerFetch(_:)), userInfo: nil, repeats: true)
+        
         // Do view setup here.
         let nib = NSNib(nibNamed: "MyCellView", bundle: NSBundle.mainBundle())
         tableView.registerNib(nib!, forIdentifier: "MyCellView")
         
-        let notificationModel = NotificationModel()
-        notificationModel.fetchLists({ json in
-            self.lists = json
-            self.listsOrg = json
-            self.tableView.reloadData()
-        })
+        fetchNotificationData()
         
         if #available(OSX 10.11, *) {
             self.searchField.delegate = self
@@ -58,6 +56,20 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     func openPreference (){
         let preferenceViewController = PreferenceViewController()
         self.presentViewControllerAsModalWindow(preferenceViewController)
+    }
+    
+    func timerFetch(timer: NSTimer){
+        fetchNotificationData()
+    }
+    
+    func fetchNotificationData(){
+        print("fetchNotificationData")
+        let notificationModel = NotificationModel()
+        notificationModel.fetchLists({ json in
+            self.lists = json
+            self.listsOrg = json
+            self.tableView.reloadData()
+        })
     }
     
 }
