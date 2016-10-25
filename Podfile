@@ -4,9 +4,9 @@
 use_frameworks!
 
 target 'NotifyHub' do
-    pod 'Alamofire', '~> 3.3'
-	pod 'AlamofireImage', '~> 2.0'
-    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'Alamofire', '~> 3.5'
+    pod 'AlamofireImage', '~> 2.5'
+    pod 'SwiftyJSON', '~> 2.4'
 end
 
 plugin 'cocoapods-keys', {
@@ -15,3 +15,10 @@ plugin 'cocoapods-keys', {
     "GitHubClientSecret",
     "GitHubClientId"
 ]}
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '2.3'
+    end
+  end
+end
