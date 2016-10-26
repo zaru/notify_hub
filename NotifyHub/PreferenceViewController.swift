@@ -17,6 +17,7 @@ class PreferenceViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Preference"
         checkboxOwn.state = (self.preferenceModel.getOwnerOnly()) ? NSOnState : NSOffState
         checkboxParticipating.state = (self.preferenceModel.getParticipating()) ? NSOnState : NSOffState
     }
