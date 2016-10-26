@@ -10,12 +10,15 @@ import Cocoa
 
 class PreferenceViewController: NSViewController {
     
-    
     let preferenceModel = PreferenceModel()
+    
+    @IBOutlet weak var checkboxOwn: NSButton!
+    @IBOutlet weak var checkboxParticipating: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        checkboxOwn.state = (self.preferenceModel.getOwnerOnly()) ? NSOnState : NSOffState
+        checkboxParticipating.state = (self.preferenceModel.getParticipating()) ? NSOnState : NSOffState
     }
     
     @IBAction func participating(sender: NSButton) {
