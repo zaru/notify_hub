@@ -60,27 +60,39 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     
     func timerFetch(timer: NSTimer){
         fetchNotificationData()
-        dispNotification()
     }
     
     func fetchNotificationData(){
         print("fetchNotificationData")
         let notificationModel = NotificationModel()
         notificationModel.fetchLists({ json in
-            self.lists = json
-            self.listsOrg = json
-            self.tableView.reloadData()
+            if (self.lists != json) {
+                print("new data")
+                self.lists = json
+                self.listsOrg = json
+                self.tableView.reloadData()
+                
+                self.dispNotification()
+            } else {
+                print("old data")
+            }
         })
     }
     
     func dispNotification(){
         let notification = NSUserNotification()
-        notification.title = "タイトル"
-        notification.subtitle = "サブタイトル1"
-        notification.informativeText = "test"
-        notification.contentImage =  NSImage(named: "icon_256")
-        notification.userInfo = ["title" : "タイトル"]
-        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+        print(self.lists[0])
+        notification.title = self.lists[0]["title"]
+        notification.subtitle = self.lists[0]["repository"]
+        notification.informativeText = self.lists[0]["updated_at"]
+        Alamofire.request(.GET, self.lists[0]["icon"]!)
+            .responseImage { response in
+                if let image = response.result.value {
+                    notification.contentImage = image
+                    notification.userInfo = ["title" : "タイトル"]
+                    NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+                }
+        }
     }
     
 }
