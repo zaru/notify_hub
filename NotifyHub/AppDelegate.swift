@@ -9,6 +9,7 @@
 import Cocoa
 import Keys
 import Alamofire
+import SwiftyJSON
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
@@ -83,10 +84,23 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         
     }
     
+    
     func userNotificationCenter(center: NSUserNotificationCenter, didActivateNotification notification: NSUserNotification) {
         let info = notification.userInfo as! [String:String]
+        let gitHubModel = GitHubModel()
+        let accessToken = gitHubModel.getAccessToekn()
+        let headers = [
+            "Authorization": "token " + accessToken
+        ]
         
-        print(info["title"]!)
+        Alamofire.request(.GET, info["url"]!, headers: headers)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                NSWorkspace.sharedWorkspace().openURL(NSURL(string: json["html_url"].string!)!)
+        }
     }
     
     func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {

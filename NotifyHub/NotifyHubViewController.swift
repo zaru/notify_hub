@@ -89,7 +89,7 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
             .responseImage { response in
                 if let image = response.result.value {
                     notification.contentImage = image
-                    notification.userInfo = ["title" : "タイトル"]
+                    notification.userInfo = ["url" : self.lists[0]["url"]!]
                     NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
                 }
         }
