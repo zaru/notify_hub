@@ -67,14 +67,22 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         let notificationModel = NotificationModel()
         notificationModel.fetchLists({ json in
             if (self.lists != json) {
-                print("new data")
+                if (self.lists.count > 0) {
+                    
+                    let dateOld = self.parseStringDate(self.lists[0]["updated_at"]!)
+                    let dateNew = self.parseStringDate(json[0]["updated_at"]!)
+                    if (dateOld.compare(dateNew) == NSComparisonResult.OrderedAscending) {
+                        print("new data")
+                        self.dispNotification()
+                    }
+                    
+                }
+                
                 self.lists = json
                 self.listsOrg = json
                 self.tableView.reloadData()
-                
-                self.dispNotification()
             } else {
-                print("old data")
+                print("no change")
             }
         })
     }
@@ -95,6 +103,15 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         }
     }
     
+    //TODO: move to UtilsClass
+    func parseStringDate(str: String) -> NSDate {
+        let formatter = NSDateFormatter()
+        let localeStyle = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.locale = localeStyle
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        return formatter.dateFromString(str)!
+    }
 }
 
 extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
@@ -112,6 +129,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         cell.itemTitle.stringValue = self.lists[row]["title"]!
         cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
         cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
+        print(self.lists[row]["updated_at"]!)
         
         Alamofire.request(.GET, self.lists[row]["icon"]!)
             .responseImage { response in
