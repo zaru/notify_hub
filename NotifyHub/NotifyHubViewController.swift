@@ -22,8 +22,6 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("viewDidLoad")
-        
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: #selector(NotifyHubViewController.timerFetch(_:)), userInfo: nil, repeats: true)
         
@@ -63,7 +61,6 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     }
     
     func fetchNotificationData(){
-        print("fetchNotificationData")
         let notificationModel = NotificationModel()
         notificationModel.fetchLists({ json in
             if (self.lists != json) {
@@ -72,7 +69,6 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
                     let dateOld = self.parseStringDate(self.lists[0]["updated_at"]!)
                     let dateNew = self.parseStringDate(json[0]["updated_at"]!)
                     if (dateOld.compare(dateNew) == NSComparisonResult.OrderedAscending) {
-                        print("new data")
                         self.dispNotification()
                     }
                     
@@ -82,14 +78,12 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
                 self.listsOrg = json
                 self.tableView.reloadData()
             } else {
-                print("no change")
             }
         })
     }
     
     func dispNotification(){
         let notification = NSUserNotification()
-        print(self.lists[0])
         notification.title = self.lists[0]["title"]
         notification.subtitle = self.lists[0]["repository"]
         notification.informativeText = self.lists[0]["updated_at"]
@@ -129,7 +123,6 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         cell.itemTitle.stringValue = self.lists[row]["title"]!
         cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
         cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
-        print(self.lists[row]["updated_at"]!)
         
         Alamofire.request(.GET, self.lists[row]["icon"]!)
             .responseImage { response in
@@ -141,7 +134,6 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        print(self.tableView.selectedRow)
         let gitHubModel = GitHubModel()
         let accessToken = gitHubModel.getAccessToekn()
         let headers = [
