@@ -114,6 +114,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func fetchAccessToken(code: String) {
         let keys = NotifyhubKeys()
+        print("fetchAccessToken")
+        print(code)
         
         let url: NSURL = NSURL(string: "https://github.com/login/oauth/access_token")!
         let body: NSMutableDictionary = NSMutableDictionary()

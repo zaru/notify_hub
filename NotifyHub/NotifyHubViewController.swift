@@ -7,12 +7,14 @@
 //
 
 import Cocoa
+//import Keys
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
 class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     
+    @IBOutlet weak var logoutBtn: NSButton!
     @IBOutlet weak var preferenceBtn: NSButton!
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var tableView: NSTableView!
@@ -38,6 +40,8 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         }
         
         self.preferenceBtn.action = #selector(openPreference)
+        self.logoutBtn.action = #selector(logOut)
+        
     }
     
     override func controlTextDidChange(obj: NSNotification) {
@@ -49,6 +53,15 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
             self.lists = self.listsOrg
         }
         self.tableView.reloadData()
+    }
+    
+    func logOut (){
+        let body: NSMutableDictionary = NSMutableDictionary()
+        body.removeObjectForKey("code")
+        
+        let gitHubModel = GitHubModel()
+        gitHubModel.removeAccessAotken()
+
     }
     
     func openPreference (){

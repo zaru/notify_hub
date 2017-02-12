@@ -20,4 +20,9 @@ class GitHubModel {
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(accessToken, forKey: "access_token")
     }
+    
+    func removeAccessAotken() {
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.removeObjectForKey("access_token")
+    }
 }
