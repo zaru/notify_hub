@@ -128,7 +128,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 50
+        return 60
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -141,6 +141,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
             .responseImage { response in
                 if let image = response.result.value {
                     cell.itemIcon.image = image
+                    cell.itemIcon.layer!.cornerRadius = 12.0
                 }
         }
         return cell
