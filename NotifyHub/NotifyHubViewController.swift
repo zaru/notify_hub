@@ -24,7 +24,8 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.whiteColor().CGColor
         var timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: #selector(NotifyHubViewController.timerFetch(_:)), userInfo: nil, repeats: true)
         
         // Do view setup here.
@@ -39,10 +40,13 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
             // Fallback on earlier versions
         }
         
+        self.searchField.focusRingType = NSFocusRingType.None
+        
         self.preferenceBtn.action = #selector(openPreference)
         self.logoutBtn.action = #selector(logOut)
         
     }
+    
     
     override func controlTextDidChange(obj: NSNotification) {
         if self.searchField.stringValue.characters.count > 0 {
