@@ -31,6 +31,7 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         // Do view setup here.
         let nib = NSNib(nibNamed: "MyCellView", bundle: NSBundle.mainBundle())
         tableView.registerNib(nib!, forIdentifier: "MyCellView")
+        tableView.hidden = true
         
         fetchNotificationData()
         
@@ -94,6 +95,7 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
                 self.lists = json
                 self.listsOrg = json
                 self.tableView.reloadData()
+                self.tableView.hidden = false
             } else {
             }
         })
