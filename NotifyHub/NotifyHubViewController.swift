@@ -32,6 +32,7 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         let nib = NSNib(nibNamed: "MyCellView", bundle: NSBundle.mainBundle())
         tableView.registerNib(nib!, forIdentifier: "MyCellView")
         tableView.hidden = true
+        tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
         
         fetchNotificationData()
         
