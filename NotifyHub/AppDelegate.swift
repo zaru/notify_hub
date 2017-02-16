@@ -10,6 +10,7 @@ import Cocoa
 import Keys
 import Alamofire
 import SwiftyJSON
+import LoginServiceKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
@@ -134,6 +135,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         dispatch_async(dispatch_get_main_queue(), {
             self.popover.contentViewController = NotifyHubViewController(nibName: "NotifyHubViewController", bundle: nil)
         })
+    }
+    
+    func addingToLoginItems() {
+        let appPath = NSBundle.mainBundle().bundlePath
+        LoginServiceKit.addPathToLoginItems(appPath)
     }
     
     
