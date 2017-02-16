@@ -43,13 +43,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         }
         
         NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
-        let notification = NSUserNotification()
-        notification.title = "タイトル"
-        notification.subtitle = "サブタイトル1"
-        notification.informativeText = "test"
-        notification.contentImage =  NSImage(named: "icon_256")
-        notification.userInfo = ["title" : "タイトル"]
-        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
         
         let appleEventManager:NSAppleEventManager = NSAppleEventManager.sharedAppleEventManager()
         appleEventManager.setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(_:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
