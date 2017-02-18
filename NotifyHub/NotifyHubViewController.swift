@@ -135,7 +135,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 60
+        return 90
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -146,6 +146,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         
         let notificationModel = NotificationModel()
         notificationModel.fetchDetail(self.lists[row]["url"]!, callback: { json in
+            cell.itemBody.stringValue = json["body"]!
             Alamofire.request(.GET, json["avatar"]!)
                 .responseImage { response in
                     if let image = response.result.value {
