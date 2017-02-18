@@ -16,7 +16,6 @@ class NotificationModel {
         let gitHubModel = GitHubModel()
         let accessToken = gitHubModel.getAccessToekn()
         if(accessToken != ""){
-            print(accessToken)
             
             var params = ["access_token": accessToken]
             if PreferenceModel().getParticipating() {
@@ -49,6 +48,7 @@ class NotificationModel {
 //                        json = json.filter({ "zaru" == $1["repository"]["owner"]["login"] })
                     } else {
                         json.forEach { (_, json) in
+                            
                             let dic:[String:String] = [
                                 "title":json["subject"]["title"].string!,
                                 "type":json["subject"]["type"].string!,
@@ -65,4 +65,24 @@ class NotificationModel {
         }
     }
     
+    func fetchDetail(url: String, callback: ([String:String]) -> Void) {
+        let gitHubModel = GitHubModel()
+        let accessToken = gitHubModel.getAccessToekn()
+        if(accessToken != ""){
+            let params = ["access_token": accessToken]
+            Alamofire.request(.GET, url, parameters: params)
+                .responseJSON { response in
+                    guard let object = response.result.value else {
+                        return
+                    }
+                    let json = JSON(object)
+                    let dic:[String:String] = [
+                        "avatar":json["user"]["avatar_url"].string!
+                    ]
+                    callback(dic)
+                    
+            }
+        }
+    }
+
 }

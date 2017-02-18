@@ -144,13 +144,17 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
         cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
         
-        Alamofire.request(.GET, self.lists[row]["icon"]!)
-            .responseImage { response in
-                if let image = response.result.value {
-                    cell.itemIcon.image = image
-                    cell.itemIcon.layer!.cornerRadius = 12.0
-                }
-        }
+        let notificationModel = NotificationModel()
+        notificationModel.fetchDetail(self.lists[row]["url"]!, callback: { json in
+            Alamofire.request(.GET, json["avatar"]!)
+                .responseImage { response in
+                    if let image = response.result.value {
+                        cell.itemIcon.image = image
+                        cell.itemIcon.layer!.cornerRadius = 12.0
+                    }
+            }
+        })
+        
         return cell
     }
     
