@@ -2,6 +2,9 @@ PODS:
   - Alamofire (3.5.1)
   - AlamofireImage (2.5.0):
     - Alamofire (~> 3.5)
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
   - Keys (1.0.0)
   - LoginServiceKit (0.0.1)
   - SwiftyJSON (2.4.0)
@@ -9,6 +12,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.5)
   - AlamofireImage (~> 2.5)
+  - Crashlytics
+  - Fabric
   - Keys (from `Pods/CocoaPodsKeys`)
   - LoginServiceKit (from `https://github.com/Clipy/LoginServiceKit.git`, tag `v0.0.1`)
   - SwiftyJSON (~> 2.4)
@@ -28,10 +33,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
   LoginServiceKit: 92aee420b05d163e356f6c5cbef64dd23eef93e1
   SwiftyJSON: 96918c1bf505efa50c4f72957018dd3452090c9c
 
-PODFILE CHECKSUM: 3ae0ca2ce0a94241da40acc5a7df5c8fbee43d07
+PODFILE CHECKSUM: b4e00dd7edf4cfd8e4fd201faa80ca34daad6c1c
 
 COCOAPODS: 1.2.0

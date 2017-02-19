@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Fabric
+import Crashlytics
 import Keys
 import Alamofire
 import SwiftyJSON
@@ -19,8 +21,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     var statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
     let MyNotification = "MyNotification"
-    
+
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.registerDefaults(["NSApplicationCrashOnExceptions": true])
+        Fabric.with([Crashlytics.self])
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.updatePopoverView(_:)), name: MyNotification, object: nil)
         

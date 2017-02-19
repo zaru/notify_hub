@@ -8,6 +8,8 @@ target 'NotifyHub' do
     pod 'AlamofireImage', '~> 2.5'
     pod 'SwiftyJSON', '~> 2.4'
     pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit.git', :tag => 'v0.0.1'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 plugin 'cocoapods-keys', {
