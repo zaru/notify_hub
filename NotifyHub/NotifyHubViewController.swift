@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-//import Keys
+import Keys
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
@@ -135,7 +135,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 90
+        return 70
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -144,9 +144,25 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
         cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
         
+        let color = ColorUtil()
+        if ("mention" == self.lists[row]["reason"]) {
+            cell.itemType.stringValue = "mention"
+            cell.itemType.backgroundColor = color.NSColorFromRGB(0x80e021)
+        } else if ("PullRequest" == self.lists[row]["type"]) {
+            cell.itemType.stringValue = "PR"
+            cell.itemType.backgroundColor = color.NSColorFromRGB(0xff32a6)
+        } else if ("Issue" == self.lists[row]["type"]) {
+            cell.itemType.stringValue = "Issue"
+            cell.itemType.backgroundColor = color.NSColorFromRGB(0x328eff)
+        }
+        cell.itemType.wantsLayer = true
+        cell.itemType.layer?.cornerRadius = 4.0
+        
         let notificationModel = NotificationModel()
         notificationModel.fetchDetail(self.lists[row]["url"]!, callback: { json in
-            cell.itemBody.stringValue = json["body"]!
+            if ("mention" == self.lists[row]["reason"] && "" != json["body"]) {
+                cell.itemTitle.stringValue = json["body"]!
+            }
             Alamofire.request(.GET, json["avatar"]!)
                 .responseImage { response in
                     if let image = response.result.value {

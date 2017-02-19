@@ -26,6 +26,7 @@
 		45414DD61CDF91110010A4DF /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45414DD51CDF91110010A4DF /* AlamofireImage.framework */; };
 		4550274E1E5585EE00BAD59E /* LoginServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4550274D1E5585EE00BAD59E /* LoginServiceKit.framework */; };
 		457040291CF337310051EFA1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457040281CF337310051EFA1 /* UserModel.swift */; };
+		4579B1CE1E59D50700C85EC3 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579B1CD1E59D50700C85EC3 /* ColorUtil.swift */; };
 		457F10C81CDCE73F00748EE9 /* GitHubOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F10C61CDCE73F00748EE9 /* GitHubOauthViewController.swift */; };
 		457F10C91CDCE73F00748EE9 /* GitHubOauthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */; };
 		458065021CD8E3E80047E631 /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 458065011CD8E3E80047E631 /* icon_16.png */; };
@@ -66,6 +67,7 @@
 		45414DD51CDF91110010A4DF /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/AlamofireImage.framework"; sourceTree = "<group>"; };
 		4550274D1E5585EE00BAD59E /* LoginServiceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoginServiceKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/LoginServiceKit/LoginServiceKit.framework"; sourceTree = "<group>"; };
 		457040281CF337310051EFA1 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4579B1CD1E59D50700C85EC3 /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		457F10C61CDCE73F00748EE9 /* GitHubOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubOauthViewController.swift; sourceTree = "<group>"; };
 		457F10C71CDCE73F00748EE9 /* GitHubOauthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitHubOauthViewController.xib; sourceTree = "<group>"; };
 		458065011CD8E3E80047E631 /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16.png; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				45C850071CD792D700A39884 /* Request.swift */,
 				457F10CB1CDCE75800748EE9 /* Model */,
 				457F10CA1CDCE74600748EE9 /* ViewController */,
+				4579B1CF1E59D50D00C85EC3 /* Util */,
 			);
 			path = NotifyHub;
 			sourceTree = "<group>";
@@ -162,6 +165,14 @@
 				4532045E1CD4F61B0099F445 /* icon_256.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		4579B1CF1E59D50D00C85EC3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4579B1CD1E59D50700C85EC3 /* ColorUtil.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		457F10CA1CDCE74600748EE9 /* ViewController */ = {
@@ -337,6 +348,7 @@
 				45267A7D1CECA25C001FFC93 /* PreferenceModel.swift in Sources */,
 				45C850081CD792D700A39884 /* Request.swift in Sources */,
 				457F10C81CDCE73F00748EE9 /* GitHubOauthViewController.swift in Sources */,
+				4579B1CE1E59D50700C85EC3 /* ColorUtil.swift in Sources */,
 				45C357481CDA2BFD002FADF7 /* GitHubModel.swift in Sources */,
 				45414DD41CDF60B50010A4DF /* MyCellView.swift in Sources */,
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,

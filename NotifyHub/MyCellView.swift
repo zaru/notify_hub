@@ -14,5 +14,5 @@ class MyCellView: NSView {
     @IBOutlet weak var itemRepositoryName: NSTextField!
     @IBOutlet weak var itemUpdatedAt: NSTextField!
     @IBOutlet weak var itemIcon: NSImageView!
-    @IBOutlet weak var itemBody: NSTextField!
+    @IBOutlet weak var itemType: NSTextField!
 }
