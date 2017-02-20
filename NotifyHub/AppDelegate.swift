@@ -105,36 +105,33 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     
     func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {
         let url = NSURL(string: event!.paramDescriptorForKeyword(AEKeyword(keyDirectObject))!.stringValue!)
-        let querys = url!.query!.componentsSeparatedByString("=")
-        print(querys[1])
-        self.fetchAccessToken(querys[1])
+        let querys = url!.query!.componentsSeparatedByString("&")
+        let code = querys[0].componentsSeparatedByString("=")
+        self.fetchAccessToken(code[1])
         
         popover.performClose(nil)
     }
     
     func fetchAccessToken(code: String) {
         let keys = NotifyhubKeys()
-        print("fetchAccessToken")
-        print(code)
         
-        let url: NSURL = NSURL(string: "https://github.com/login/oauth/access_token")!
-        let body: NSMutableDictionary = NSMutableDictionary()
-        body.setValue(keys.gitHubClientId(), forKey: "client_id")
-        body.setValue(keys.gitHubClientSecret(), forKey: "client_secret")
-        body.setValue(code, forKey: "code")
+        let parameters = [
+            "client_id": keys.gitHubClientId(),
+            "client_secret": keys.gitHubClientSecret(),
+            "code": code
+        ]
         
-        let request: Request = Request()
-        
-        request.post(url, body: body, completionHandler: { data, response, error in
-            do {
-                let responseJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
-                let accessToken = responseJson["access_token"]!
-                GitHubModel().setAccessToken(accessToken as! String)
-                
+        Alamofire.request(.POST, "https://github.com/login/oauth/access_token", headers:["Accept": "application/json"], parameters: parameters, encoding: .URLEncodedInURL)
+            .validate()
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                let accessToken = json["access_token"].stringValue
+                GitHubModel().setAccessToken(accessToken)
                 NSNotificationCenter.defaultCenter().postNotificationName(self.MyNotification, object: nil)
-            } catch  {
-            }
-        })
+        }
     }
     
     func updatePopoverView(notification: NSNotification?) {
