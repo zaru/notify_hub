@@ -10,6 +10,7 @@ target 'NotifyHub' do
     pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit.git', :tag => 'v0.0.1'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Sparkle'
 end
 
 plugin 'cocoapods-keys', {
