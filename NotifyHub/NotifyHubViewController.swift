@@ -163,6 +163,8 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
             if ("mention" == self.lists[row]["reason"] && "" != json["body"]) {
                 cell.itemTitle.stringValue = json["body"]!
             }
+            self.lists[row]["html_url"] = json["html_url"]
+            
             Alamofire.request(.GET, json["avatar"]!)
                 .responseImage { response in
                     if let image = response.result.value {
@@ -176,22 +178,6 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        let gitHubModel = GitHubModel()
-        let accessToken = gitHubModel.getAccessToekn()
-        let headers = [
-            "Authorization": "token " + accessToken
-        ]
-        
-        Alamofire.request(.GET, self.lists[self.tableView.selectedRow]["url"]!, headers: headers)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                let json = JSON(object)
-                NSWorkspace.sharedWorkspace().openURL(NSURL(string: json["html_url"].string!)!)
-        }
-        
-        
-        
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: self.lists[self.tableView.selectedRow]["html_url"]!)!)
     }
 }

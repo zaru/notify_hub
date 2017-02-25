@@ -89,7 +89,8 @@ class NotificationModel {
                     
                     let dic:[String:String] = [
                         "avatar":json["user"]["avatar_url"].string!,
-                        "body":json["body"].stringValue
+                        "body":json["body"].stringValue,
+                        "html_url":json["html_url"].stringValue
                     ]
                     callback(dic)
 
