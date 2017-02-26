@@ -1,6 +1,8 @@
 ![notify hub](https://raw.githubusercontent.com/zaru/notify_hub/master/design/logo.png)
 
-NotifyHub is displays the notification of GitHub to desktop. You can develop efficiently without missing notification of GitHub😀
+NotifyHub is displays the notification of GitHub to desktop.
+
+You can develop efficiently without missing notification of GitHub😀
 
 ## Requirement
 
