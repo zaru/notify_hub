@@ -24,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
+        addingToLoginItems()
+        
         let ud = NSUserDefaults.standardUserDefaults()
         ud.registerDefaults(["NSApplicationCrashOnExceptions": true])
         Fabric.with([Crashlytics.self])
