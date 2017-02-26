@@ -45,7 +45,6 @@ class NotificationModel {
                                 result.append(dic)
                             }
                         }
-//                        json = json.filter({ "zaru" == $1["repository"]["owner"]["login"] })
                     } else {
                         json.forEach { (_, json) in
                             
@@ -57,15 +56,7 @@ class NotificationModel {
                             dic["updated_at"] = json["updated_at"].string!
                             dic["icon"] = json["repository"]["owner"]["avatar_url"].string!
                             dic["reason"] = json["reason"].stringValue
-//                            let dic:[String:String] = [
-//                                "title":json["subject"]["title"].string!,
-//                                "type":json["subject"]["type"].string!,
-//                                "repository":json["repository"]["full_name"].string!,
-//                                "url":json["subject"]["url"].string!,
-//                                "updated_at":json["updated_at"].string!,
-//                                "icon":json["repository"]["owner"]["avatar_url"].string!,
-//                                "reason":json["reason"].string!
-//                            ]
+
                             result.append(dic)
                         }
                     }

@@ -85,8 +85,8 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
             if (self.lists != json) {
                 
                 if (self.lists.count > 0) {
-                    let dateOld = self.parseStringDate(self.lists[0]["updated_at"]!)
-                    let dateNew = self.parseStringDate(json[0]["updated_at"]!)
+                    let dateOld = DateUtil.parseStringDate(self.lists[0]["updated_at"]!)
+                    let dateNew = DateUtil.parseStringDate(json[0]["updated_at"]!)
                     if (dateOld.compare(dateNew) == NSComparisonResult.OrderedAscending) {
                         self.dispNotification(json[0])
                     }
@@ -117,15 +117,6 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         }
     }
     
-    //TODO: move to UtilsClass
-    func parseStringDate(str: String) -> NSDate {
-        let formatter = NSDateFormatter()
-        let localeStyle = NSLocale(localeIdentifier: "en_US_POSIX")
-        formatter.locale = localeStyle
-        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        return formatter.dateFromString(str)!
-    }
 }
 
 extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {

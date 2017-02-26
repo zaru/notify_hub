@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451C147D1E63181500A621CA /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C147C1E63181500A621CA /* DateUtil.swift */; };
 		45267A7D1CECA25C001FFC93 /* PreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45267A7C1CECA25C001FFC93 /* PreferenceModel.swift */; };
 		453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453204501CD4EBDD0099F445 /* AppDelegate.swift */; };
 		453204531CD4EBDD0099F445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453204521CD4EBDD0099F445 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		017CD135F746D6B5C32262B4 /* Pods-NotifyHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotifyHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotifyHub/Pods-NotifyHub.debug.xcconfig"; sourceTree = "<group>"; };
 		3485313E4F83305BDB08AA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		451C147C1E63181500A621CA /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		45267A7C1CECA25C001FFC93 /* PreferenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceModel.swift; sourceTree = "<group>"; };
 		45269B921CD647180033085E /* libKeys.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKeys.a; path = "../../../Library/Developer/Xcode/DerivedData/NotifyHub-ahgjshrsjeyjileubjybuoashqdj/Build/Products/Debug/libKeys.a"; sourceTree = "<group>"; };
 		45269B941CD647200033085E /* libPods-NotifyHub.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-NotifyHub.a"; path = "Pods/../build/Debug/libPods-NotifyHub.a"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				4579B1CD1E59D50700C85EC3 /* ColorUtil.swift */,
+				451C147C1E63181500A621CA /* DateUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				45414DD41CDF60B50010A4DF /* MyCellView.swift in Sources */,
 				453204511CD4EBDD0099F445 /* AppDelegate.swift in Sources */,
 				45C357461CDA2BA1002FADF7 /* NotificationModel.swift in Sources */,
+				451C147D1E63181500A621CA /* DateUtil.swift in Sources */,
 				458065091CD8E9D40047E631 /* NotifyHubViewController.swift in Sources */,
 				457040291CF337310051EFA1 /* UserModel.swift in Sources */,
 			);
