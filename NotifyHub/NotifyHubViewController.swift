@@ -133,7 +133,7 @@ extension NotifyHubViewController: NSTableViewDataSource, NSTableViewDelegate {
         let cell = tableView.makeViewWithIdentifier("MyCellView", owner: self) as! MyCellView
         cell.itemTitle.stringValue = self.lists[row]["title"]!
         cell.itemRepositoryName.stringValue = self.lists[row]["repository"]!
-        cell.itemUpdatedAt.stringValue = self.lists[row]["updated_at"]!
+        cell.itemUpdatedAt.stringValue = DateUtil.formatDate(self.lists[row]["updated_at"]!)
         
         let color = ColorUtil()
         if ("mention" == self.lists[row]["reason"]) {

@@ -17,4 +17,14 @@ class DateUtil {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         return formatter.dateFromString(str)!
     }
+    
+    static func formatDate(str: String) -> String {
+        let date = parseStringDate(str)
+        let formatter = NSDateFormatter()
+        let localeStyle = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.locale = localeStyle
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter.stringFromDate(date)
+    }
 }
