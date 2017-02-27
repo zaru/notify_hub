@@ -71,8 +71,8 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     }
     
     func openPreference (){
-        let preferenceViewController = PreferenceViewController()
-        self.presentViewControllerAsModalWindow(preferenceViewController)
+        let preferenceViewController = PreferenceViewController(nibName: "PreferenceViewController", bundle: nil)
+        self.presentViewControllerAsModalWindow(preferenceViewController!)
     }
     
     func timerFetch(timer: NSTimer){
