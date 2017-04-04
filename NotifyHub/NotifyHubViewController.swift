@@ -26,15 +26,13 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
         
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = NSColor.whiteColor().CGColor
-        var timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: #selector(NotifyHubViewController.timerFetch(_:)), userInfo: nil, repeats: true)
-        
+
         // Do view setup here.
         let nib = NSNib(nibNamed: "MyCellView", bundle: NSBundle.mainBundle())
         tableView.registerNib(nib!, forIdentifier: "MyCellView")
         tableView.hidden = true
         tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyle.None
         
-        fetchNotificationData()
         
         if #available(OSX 10.11, *) {
             self.searchField.delegate = self
@@ -73,48 +71,6 @@ class NotifyHubViewController: NSViewController, NSSearchFieldDelegate {
     func openPreference (){
         let preferenceViewController = PreferenceViewController(nibName: "PreferenceViewController", bundle: nil)
         self.presentViewControllerAsModalWindow(preferenceViewController!)
-    }
-    
-    func timerFetch(timer: NSTimer){
-        fetchNotificationData()
-    }
-    
-    func fetchNotificationData(){
-        let notificationModel = NotificationModel()
-        notificationModel.fetchLists({ json in
-            if (self.lists != json) {
-                
-                if (self.lists.count > 0) {
-                    let dateOld = DateUtil.parseStringDate(self.lists[0]["updated_at"]!)
-                    let dateNew = DateUtil.parseStringDate(json[0]["updated_at"]!)
-                    if (dateOld.compare(dateNew) == NSComparisonResult.OrderedAscending) {
-                        self.dispNotification(json[0])
-                    }
-                }
-                
-                self.lists = json
-                self.listsOrg = json
-                self.tableView.reloadData()
-                self.tableView.hidden = false
-                
-            } else {
-            }
-        })
-    }
-    
-    func dispNotification(data: [String:String]){
-        let notification = NSUserNotification()
-        notification.title = data["title"]
-        notification.subtitle = data["repository"]
-        notification.informativeText = data["updated_at"]
-        Alamofire.request(.GET, data["icon"]!)
-            .responseImage { response in
-                if let image = response.result.value {
-                    notification.contentImage = image
-                    notification.userInfo = ["url" : data["url"]!]
-                    NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
-                }
-        }
     }
     
 }

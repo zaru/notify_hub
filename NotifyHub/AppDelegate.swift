@@ -62,6 +62,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let a:Bool = true
         _ = LSRegisterURL(appUrl as CFURL!, a)
         
+        
+        fetchFeed()
+        fetchNotificationData()
+        
     }
     
     
@@ -150,6 +154,69 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         LoginServiceKit.addPathToLoginItems(appPath)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // 試しにNotifyHubViewControllerからデータ取得部分を分離する
+    // 今後は、裏で独自にデータ取得して、Viewはそれを参照するだけにする
+    
+    var lists: [[String:String]] = []
+    var listsOrg: [[String:String]] = []
+    
+    func fetchFeed() {
+        _ = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: #selector(AppDelegate.timerFetch(_:)), userInfo: nil, repeats: true)
+        
+    }
+    
+    func timerFetch(timer: NSTimer){
+        fetchNotificationData()
+    }
+    
+    func fetchNotificationData(){
+        let notificationModel = NotificationModel()
+        notificationModel.fetchLists({ json in
+            if (self.lists != json) {
+                
+                if (self.lists.count > 0) {
+                    let dateOld = DateUtil.parseStringDate(self.lists[0]["updated_at"]!)
+                    let dateNew = DateUtil.parseStringDate(json[0]["updated_at"]!)
+                    if (dateOld.compare(dateNew) == NSComparisonResult.OrderedAscending) {
+                        self.dispNotification(json[0])
+                    }
+                }
+                
+                self.lists = json
+                self.listsOrg = json
+                // ここでデータを保持しておいてViewから参照できるようにする
+//                self.tableView.reloadData()
+//                self.tableView.hidden = false
+                
+            } else {
+            }
+        })
+    }
+    
+    func dispNotification(data: [String:String]){
+        let notification = NSUserNotification()
+        notification.title = data["title"]
+        notification.subtitle = data["repository"]
+        notification.informativeText = data["updated_at"]
+        Alamofire.request(.GET, data["icon"]!)
+            .responseImage { response in
+                if let image = response.result.value {
+                    notification.contentImage = image
+                    notification.userInfo = ["url" : data["url"]!]
+                    NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+                }
+        }
+    }
     
 }
 
