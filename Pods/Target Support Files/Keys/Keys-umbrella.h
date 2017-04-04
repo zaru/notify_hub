@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "NotifyhubKeys.h"
+#import "NotifyHubKeys.h"
 
 FOUNDATION_EXPORT double KeysVersionNumber;
 FOUNDATION_EXPORT const unsigned char KeysVersionString[];

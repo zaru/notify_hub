@@ -24,11 +24,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         
+        Fabric.with([Crashlytics.self])
         addingToLoginItems()
         
         let ud = NSUserDefaults.standardUserDefaults()
         ud.registerDefaults(["NSApplicationCrashOnExceptions": true])
-        Fabric.with([Crashlytics.self])
+        
+        let URLCache = NSURLCache(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
+        NSURLCache.setSharedURLCache(URLCache)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.updatePopoverView(_:)), name: MyNotification, object: nil)
         
